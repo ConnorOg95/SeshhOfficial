@@ -141,19 +141,35 @@
                                     <constraint firstAttribute="height" constant="40" id="I2T-9z-hbN"/>
                                 </constraints>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="SignUpBtnPressed:" destination="uOK-Mt-Jfq" eventType="touchUpInside" id="P9z-7X-0Ji"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8yq-cG-ezq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="8yq-cG-ezq">
                                 <rect key="frame" x="137" y="138.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Tr5-gR-EWn"/>
                                     <constraint firstAttribute="height" constant="100" id="m9y-Ih-b6O"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru1-Hb-buD">
+                                <rect key="frame" x="16" y="637" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="d1U-nN-HfO"/>
+                                </constraints>
+                                <state key="normal" title="RETURN TO LOG IN"/>
+                                <connections>
+                                    <action selector="dismiss_onClick:" destination="uOK-Mt-Jfq" eventType="touchUpInside" id="sBv-hM-wBb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="stH-CM-2Wc" firstAttribute="centerY" secondItem="lL4-Mp-oWp" secondAttribute="centerY" id="1fA-nJ-WiJ"/>
+                            <constraint firstItem="ru1-Hb-buD" firstAttribute="leading" secondItem="lL4-Mp-oWp" secondAttribute="leadingMargin" id="426-7M-jIs"/>
+                            <constraint firstItem="SBD-dT-DJj" firstAttribute="top" secondItem="ru1-Hb-buD" secondAttribute="bottom" id="9dA-ch-nLZ"/>
                             <constraint firstItem="stH-CM-2Wc" firstAttribute="leading" secondItem="lL4-Mp-oWp" secondAttribute="leadingMargin" constant="80" id="IG5-4M-ii3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ru1-Hb-buD" secondAttribute="trailing" id="LCQ-NX-ZUe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fo8-zs-kyJ" secondAttribute="trailing" constant="100" id="NpA-y1-g3Y"/>
                             <constraint firstItem="stH-CM-2Wc" firstAttribute="top" secondItem="8yq-cG-ezq" secondAttribute="bottom" constant="40" id="OZm-ta-vuw"/>
                             <constraint firstItem="8yq-cG-ezq" firstAttribute="centerX" secondItem="lL4-Mp-oWp" secondAttribute="centerX" id="Poz-ea-hRS"/>
@@ -163,6 +179,13 @@
                             <constraint firstItem="fo8-zs-kyJ" firstAttribute="top" secondItem="stH-CM-2Wc" secondAttribute="bottom" constant="20" id="ngI-c0-cLK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTxtFld" destination="gzi-CW-fTN" id="Ukc-Cc-nwT"/>
+                        <outlet property="passwordTxtFld" destination="iQ9-Ie-kB5" id="Oye-wm-leq"/>
+                        <outlet property="profileImgView" destination="8yq-cG-ezq" id="WXD-X0-tZw"/>
+                        <outlet property="signUpBtn" destination="fo8-zs-kyJ" id="npA-4X-n4o"/>
+                        <outlet property="usernameTxtFld" destination="hfD-BF-Bb8" id="ZSP-bo-skc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aac-h4-6jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,4 +200,7 @@
             <point key="canvasLocation" x="1705" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholderImg" width="225" height="225"/>
+    </resources>
 </document>
