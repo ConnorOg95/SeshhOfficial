@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Seshh FeedVC-->
+        <scene sceneID="FVY-Hc-DKN">
+            <objects>
+                <viewController id="npp-aH-UZf" customClass="SeshhFeedVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gth-jS-xOi"/>
+                        <viewControllerLayoutGuide type="bottom" id="hHi-9d-jl7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bnx-8v-CEp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bp2-da-j55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1E-cg-G5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="1717"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="cYe-ow-7w6">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationSeshhFeed" automaticallyAdjustsScrollViewInsets="NO" id="eqf-t9-uu8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" id="sQm-uw-gkd"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VrV-w3-DIF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="npp-aH-UZf" kind="relationship" relationship="rootViewController" id="o6T-ES-M77"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A51-Ot-P6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="987"/>
+        </scene>
+    </scenes>
+</document>

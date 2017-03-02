@@ -1,0 +1,6 @@
+framework module Pods_SeshhOfficial {
+  umbrella header "Pods-SeshhOfficial-umbrella.h"
+
+  export *
+  module * { export * }
+}

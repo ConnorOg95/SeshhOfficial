@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9AF67AD077CFB69EF3D5554 /* Pods_SeshhOfficial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */; };
 		CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC01C1E67AD150044C8E1 /* AppDelegate.swift */; };
-		CE0FC01F1E67AD150044C8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC01E1E67AD150044C8E1 /* ViewController.swift */; };
-		CE0FC0221E67AD150044C8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0201E67AD150044C8E1 /* Main.storyboard */; };
 		CE0FC0241E67AD150044C8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0231E67AD150044C8E1 /* Assets.xcassets */; };
 		CE0FC0271E67AD150044C8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0251E67AD150044C8E1 /* LaunchScreen.storyboard */; };
+		CE0FC02F1E67AD400044C8E1 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC02E1E67AD400044C8E1 /* Start.storyboard */; };
+		CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0301E67AFC80044C8E1 /* SignInVC.swift */; };
+		CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0321E67AFD90044C8E1 /* SignUpVC.swift */; };
+		CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0341E67B0010044C8E1 /* SeshhFeedVC.swift */; };
+		CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0361E67B0100044C8E1 /* SeshhMapVC.swift */; };
+		CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0381E67B0570044C8E1 /* PostSeshhVC.swift */; };
+		CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */; };
+		CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */; };
+		CE0FC0401E68A7E30044C8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC03F1E68A7E30044C8E1 /* Main.storyboard */; };
+		CE0FC0421E68AAF90044C8E1 /* SeshhFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0411E68AAF90044C8E1 /* SeshhFeed.storyboard */; };
+		CE0FC0441E68AE040044C8E1 /* PostSeshh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0431E68AE040044C8E1 /* PostSeshh.storyboard */; };
+		CE0FC0461E68AE670044C8E1 /* SeshhMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0451E68AE670044C8E1 /* SeshhMap.storyboard */; };
+		CE0FC0481E68AEA00044C8E1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0471E68AEA00044C8E1 /* Profile.storyboard */; };
+		CE0FC04A1E68AEDC0044C8E1 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0491E68AEDC0044C8E1 /* Activity.storyboard */; };
+		CE0FC04D1E68BCAE0044C8E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277818AF5038C2E59B5CC9EA /* Pods-SeshhOfficial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeshhOfficial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeshhOfficial/Pods-SeshhOfficial.debug.xcconfig"; sourceTree = "<group>"; };
+		91E433D1978897B72A67EE5C /* Pods-SeshhOfficial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeshhOfficial.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeshhOfficial/Pods-SeshhOfficial.release.xcconfig"; sourceTree = "<group>"; };
 		CE0FC0191E67AD150044C8E1 /* SeshhOfficial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeshhOfficial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0FC01C1E67AD150044C8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE0FC01E1E67AD150044C8E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE0FC0211E67AD150044C8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE0FC0231E67AD150044C8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0FC0261E67AD150044C8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0FC0281E67AD150044C8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0FC02E1E67AD400044C8E1 /* Start.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		CE0FC0301E67AFC80044C8E1 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		CE0FC0321E67AFD90044C8E1 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		CE0FC0341E67B0010044C8E1 /* SeshhFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeshhFeedVC.swift; sourceTree = "<group>"; };
+		CE0FC0361E67B0100044C8E1 /* SeshhMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeshhMapVC.swift; sourceTree = "<group>"; };
+		CE0FC0381E67B0570044C8E1 /* PostSeshhVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSeshhVC.swift; sourceTree = "<group>"; };
+		CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		CE0FC03F1E68A7E30044C8E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CE0FC0411E68AAF90044C8E1 /* SeshhFeed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeshhFeed.storyboard; sourceTree = "<group>"; };
+		CE0FC0431E68AE040044C8E1 /* PostSeshh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostSeshh.storyboard; sourceTree = "<group>"; };
+		CE0FC0451E68AE670044C8E1 /* SeshhMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeshhMap.storyboard; sourceTree = "<group>"; };
+		CE0FC0471E68AEA00044C8E1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CE0FC0491E68AEDC0044C8E1 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AF67AD077CFB69EF3D5554 /* Pods_SeshhOfficial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79DFE256A72815FB4006331F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				277818AF5038C2E59B5CC9EA /* Pods-SeshhOfficial.debug.xcconfig */,
+				91E433D1978897B72A67EE5C /* Pods-SeshhOfficial.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C90E6BDFE759DC2F9D1E6399 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE0FC0101E67AD150044C8E1 = {
 			isa = PBXGroup;
 			children = (
 				CE0FC01B1E67AD150044C8E1 /* SeshhOfficial */,
 				CE0FC01A1E67AD150044C8E1 /* Products */,
+				79DFE256A72815FB4006331F /* Pods */,
+				C90E6BDFE759DC2F9D1E6399 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +105,42 @@
 			isa = PBXGroup;
 			children = (
 				CE0FC01C1E67AD150044C8E1 /* AppDelegate.swift */,
-				CE0FC01E1E67AD150044C8E1 /* ViewController.swift */,
-				CE0FC0201E67AD150044C8E1 /* Main.storyboard */,
+				CE0FC03E1E67B0E10044C8E1 /* ViewControllers */,
+				CE0FC04B1E68B0BC0044C8E1 /* Storyboards */,
 				CE0FC0231E67AD150044C8E1 /* Assets.xcassets */,
-				CE0FC0251E67AD150044C8E1 /* LaunchScreen.storyboard */,
+				CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */,
 				CE0FC0281E67AD150044C8E1 /* Info.plist */,
 			);
 			path = SeshhOfficial;
+			sourceTree = "<group>";
+		};
+		CE0FC03E1E67B0E10044C8E1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FC0341E67B0010044C8E1 /* SeshhFeedVC.swift */,
+				CE0FC0301E67AFC80044C8E1 /* SignInVC.swift */,
+				CE0FC0321E67AFD90044C8E1 /* SignUpVC.swift */,
+				CE0FC0361E67B0100044C8E1 /* SeshhMapVC.swift */,
+				CE0FC0381E67B0570044C8E1 /* PostSeshhVC.swift */,
+				CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */,
+				CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE0FC04B1E68B0BC0044C8E1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FC02E1E67AD400044C8E1 /* Start.storyboard */,
+				CE0FC03F1E68A7E30044C8E1 /* Main.storyboard */,
+				CE0FC0491E68AEDC0044C8E1 /* Activity.storyboard */,
+				CE0FC0471E68AEA00044C8E1 /* Profile.storyboard */,
+				CE0FC0451E68AE670044C8E1 /* SeshhMap.storyboard */,
+				CE0FC0431E68AE040044C8E1 /* PostSeshh.storyboard */,
+				CE0FC0411E68AAF90044C8E1 /* SeshhFeed.storyboard */,
+				CE0FC0251E67AD150044C8E1 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE0FC02B1E67AD150044C8E1 /* Build configuration list for PBXNativeTarget "SeshhOfficial" */;
 			buildPhases = (
+				471231E9402503FF1FBD09BD /* [CP] Check Pods Manifest.lock */,
 				CE0FC0151E67AD150044C8E1 /* Sources */,
 				CE0FC0161E67AD150044C8E1 /* Frameworks */,
 				CE0FC0171E67AD150044C8E1 /* Resources */,
+				3F2A8D5D8BB8EF29F2E12D34 /* [CP] Embed Pods Frameworks */,
+				35CE1F9E864BDDF4E99E1739 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,19 +207,80 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0FC0271E67AD150044C8E1 /* LaunchScreen.storyboard in Resources */,
+				CE0FC04A1E68AEDC0044C8E1 /* Activity.storyboard in Resources */,
 				CE0FC0241E67AD150044C8E1 /* Assets.xcassets in Resources */,
-				CE0FC0221E67AD150044C8E1 /* Main.storyboard in Resources */,
+				CE0FC0481E68AEA00044C8E1 /* Profile.storyboard in Resources */,
+				CE0FC0441E68AE040044C8E1 /* PostSeshh.storyboard in Resources */,
+				CE0FC0421E68AAF90044C8E1 /* SeshhFeed.storyboard in Resources */,
+				CE0FC02F1E67AD400044C8E1 /* Start.storyboard in Resources */,
+				CE0FC0401E68A7E30044C8E1 /* Main.storyboard in Resources */,
+				CE0FC04D1E68BCAE0044C8E1 /* GoogleService-Info.plist in Resources */,
+				CE0FC0461E68AE670044C8E1 /* SeshhMap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35CE1F9E864BDDF4E99E1739 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeshhOfficial/Pods-SeshhOfficial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F2A8D5D8BB8EF29F2E12D34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeshhOfficial/Pods-SeshhOfficial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		471231E9402503FF1FBD09BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE0FC0151E67AD150044C8E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0FC01F1E67AD150044C8E1 /* ViewController.swift in Sources */,
+				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
+				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
+				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
+				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
+				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
+				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
+				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,14 +288,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE0FC0201E67AD150044C8E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE0FC0211E67AD150044C8E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE0FC0251E67AD150044C8E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,6 +394,7 @@
 		};
 		CE0FC02C1E67AD150044C8E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277818AF5038C2E59B5CC9EA /* Pods-SeshhOfficial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MPDGGLB3DM;
@@ -272,6 +408,7 @@
 		};
 		CE0FC02D1E67AD150044C8E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E433D1978897B72A67EE5C /* Pods-SeshhOfficial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MPDGGLB3DM;
@@ -302,6 +439,7 @@
 				CE0FC02D1E67AD150044C8E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
