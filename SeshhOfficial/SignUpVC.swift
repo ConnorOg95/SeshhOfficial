@@ -15,14 +15,43 @@ class SignUpVC: UIViewController {
     
     @IBOutlet weak var usernameTxtFld: UITextField!
     @IBOutlet weak var emailTxtFld: UITextField!
+    @IBOutlet weak var confirmEmailTxtFld: UITextField!
     @IBOutlet weak var passwordTxtFld: UITextField!
+    @IBOutlet weak var confirmedPasswordTxtFld: UITextField!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var signUpBtn: UIButton!
     
     var selectedImg: UIImage?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTxtFld.backgroundColor = UIColor.clear
+        usernameTxtFld.tintColor = UIColor.white
+        usernameTxtFld.textColor = UIColor.white
+        usernameTxtFld.attributedPlaceholder = NSAttributedString(string: usernameTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerUsername = CALayer()
+        bottomLayerUsername.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerUsername.backgroundColor = UIColor.white.cgColor
+        usernameTxtFld.layer.addSublayer(bottomLayerUsername)
+        
+        emailTxtFld.backgroundColor = UIColor.clear
+        emailTxtFld.tintColor = UIColor.white
+        emailTxtFld.textColor = UIColor.white
+        emailTxtFld.attributedPlaceholder = NSAttributedString(string: emailTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerEmail = CALayer()
+        bottomLayerEmail.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerEmail.backgroundColor = UIColor.white.cgColor
+        emailTxtFld.layer.addSublayer(bottomLayerEmail)
+        
+        passwordTxtFld.backgroundColor = UIColor.clear
+        passwordTxtFld.tintColor = UIColor.white
+        passwordTxtFld.textColor = UIColor.white
+        passwordTxtFld.attributedPlaceholder = NSAttributedString(string: passwordTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerPassword = CALayer()
+        bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerPassword.backgroundColor = UIColor.white.cgColor
+        passwordTxtFld.layer.addSublayer(bottomLayerPassword)
         
         profileImgView.layer.cornerRadius = 50
         profileImgView.clipsToBounds = true
@@ -30,9 +59,13 @@ class SignUpVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpVC.handleSelectProfileImgView))
         profileImgView.addGestureRecognizer(tapGesture)
         profileImgView.isUserInteractionEnabled = true
-        
+        signUpBtn.isEnabled = false
         handleTxtFld()
-
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     func handleTxtFld() {
@@ -47,56 +80,37 @@ class SignUpVC: UIViewController {
             signUpBtn.isEnabled = false
             return
         }
+        //THIS IS CHANGING COLOUR AS SOON AS TEXT FIELD IS EDITED - NEEDS TO BE REDONE
         signUpBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
         signUpBtn.isEnabled = true
     }
     
     func handleSelectProfileImgView() {
-        
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
-        
     }
     
     
     @IBAction func dismiss_onClick(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
-        
     }
+    
     @IBAction func SignUpBtnPressed(_ sender: Any) {
         
-        FIRAuth.auth()?.createUser(withEmail: emailTxtFld.text!, password: passwordTxtFld.text!, completion: { (user: FIRUser?, error: Error?) in
-            if error != nil {
-                print("CONNOR: SIGN UP ERROR - \(error?.localizedDescription)")
-                return
-            }
-            let uid = user?.uid
-            let storageRef = FIRStorage.storage().reference(forURL: "gs://seshhofficial.appspot.com").child("profile_image").child(uid!)
-            if let profileImg = self.selectedImg, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-                storageRef.put(imageData, metadata: nil, completion: { (metadata, error) in
-                    if error != nil {
-                        return
-                    }
-                    let profileImgURL = metadata?.downloadURL()?.absoluteString
-                    self.setUserInformation(profileImgURL: profileImgURL!, username: self.usernameTxtFld.text!, email: self.emailTxtFld.text!, uid: uid!)
-                })
-            }
-        })
+        view.endEditing(true)
+        ProgressHUD.show("Processing...", interaction: false)
+        if let profileImg = self.selectedImg, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            AuthService.signUp(username: usernameTxtFld.text!, email: emailTxtFld.text!, password: passwordTxtFld.text!, imageData: imageData, onSuccess: {
+                ProgressHUD.showSuccess("Sign Up Successful")
+                self.performSegue(withIdentifier: "signUpToTabBarVC", sender: nil)
+            }, onError: { (errorString) in
+                ProgressHUD.showError(errorString!)
+            })
+        } else {
+            ProgressHUD.showError("Profile Image Needs To Be Selected")
+        }
     }
-    
-    func setUserInformation(profileImgURL: String, username: String, email: String, uid: String) {
-        
-        let ref = FIRDatabase.database().reference()
-        let usersReference = ref.child("users")
-        let newUserReference = usersReference.child(uid)
-        newUserReference.setValue(["username": username, "email": email, "profileImgURL": profileImgURL])
-        
-    }
-    
-    
-    
 }
 
 extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -104,12 +118,9 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            
             selectedImg = image
             profileImgView.image = image
         }
         dismiss(animated: true, completion: nil)
     }
-
-
 }

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Seshh FeedVC-->
+        <!--Seshh Feed-->
         <scene sceneID="FVY-Hc-DKN">
             <objects>
                 <viewController id="npp-aH-UZf" customClass="SeshhFeedVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bp2-da-j55"/>
+                    <navigationItem key="navigationItem" title="Seshh Feed" id="Bp2-da-j55">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="8pa-Pq-zf8">
+                            <connections>
+                                <action selector="logout_TouchUpInside:" destination="npp-aH-UZf" id="iai-Oo-rtS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1E-cg-G5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +38,7 @@
         <scene sceneID="cYe-ow-7w6">
             <objects>
                 <navigationController storyboardIdentifier="NavigationSeshhFeed" automaticallyAdjustsScrollViewInsets="NO" id="eqf-t9-uu8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="sQm-uw-gkd"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="Home" selectedImage="Home_Selected" id="sQm-uw-gkd"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VrV-w3-DIF">
@@ -49,4 +55,8 @@
             <point key="canvasLocation" x="-65" y="987"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="21" height="23"/>
+        <image name="Home_Selected" width="21" height="23"/>
+    </resources>
 </document>

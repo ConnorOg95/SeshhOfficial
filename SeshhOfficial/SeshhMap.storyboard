@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Seshh MapVC-->
+        <!--Who's On The Seshh?-->
         <scene sceneID="SHx-gS-1q4">
             <objects>
                 <viewController id="3VA-Cd-cE6" customClass="SeshhMapVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Inc-Rm-Ma3"/>
+                    <navigationItem key="navigationItem" title="Who's On The Seshh?" id="Inc-Rm-Ma3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axu-sx-mo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +32,7 @@
         <scene sceneID="Oss-8a-4Jw">
             <objects>
                 <navigationController storyboardIdentifier="NavigationSeshhMap" automaticallyAdjustsScrollViewInsets="NO" id="cfT-Uu-qh4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="u8S-C5-nJu"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Search" selectedImage="Search_Selected" id="u8S-C5-nJu"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GLO-sr-CDG">
@@ -49,4 +49,8 @@
             <point key="canvasLocation" x="1548" y="985"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Search" width="23" height="22"/>
+        <image name="Search_Selected" width="23" height="22"/>
+    </resources>
 </document>

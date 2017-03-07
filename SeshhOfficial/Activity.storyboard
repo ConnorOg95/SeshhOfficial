@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ActivityVC-->
+        <!--Activity-->
         <scene sceneID="cV6-LN-hry">
             <objects>
                 <viewController id="lae-o0-Rqq" customClass="ActivityVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p22-LT-ZIh"/>
+                    <navigationItem key="navigationItem" title="Activity" id="p22-LT-ZIh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6q-n3-05D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +32,7 @@
         <scene sceneID="mRt-lm-59q">
             <objects>
                 <navigationController storyboardIdentifier="NavigationActivity" automaticallyAdjustsScrollViewInsets="NO" id="QXQ-G2-n04" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="uHn-Am-TqW"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="Activity" selectedImage="Activity_Selected" id="uHn-Am-TqW"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvF-HM-Bo0">
@@ -49,4 +49,8 @@
             <point key="canvasLocation" x="3174" y="986"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activity" width="22" height="20"/>
+        <image name="Activity_Selected" width="22" height="20"/>
+    </resources>
 </document>

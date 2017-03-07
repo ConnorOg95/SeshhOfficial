@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ProfileVC-->
+        <!--Profile-->
         <scene sceneID="dLZ-xK-2Ut">
             <objects>
                 <viewController id="fZs-gN-Hsh" customClass="ProfileVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Rvn-3l-ckI"/>
+                    <navigationItem key="navigationItem" title="Profile" id="Rvn-3l-ckI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCf-pL-nls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +32,7 @@
         <scene sceneID="C7e-ek-ARs">
             <objects>
                 <navigationController storyboardIdentifier="NavigationProfile" automaticallyAdjustsScrollViewInsets="NO" id="sAZ-31-JnH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="7tw-IX-2Mx"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="7tw-IX-2Mx"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Oq-Ei-lrb">
@@ -49,4 +49,8 @@
             <point key="canvasLocation" x="2361" y="986"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Profile" width="20" height="21"/>
+        <image name="Profile_Selected" width="20" height="21"/>
+    </resources>
 </document>

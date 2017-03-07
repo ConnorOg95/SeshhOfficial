@@ -26,6 +26,10 @@
 		CE0FC0481E68AEA00044C8E1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0471E68AEA00044C8E1 /* Profile.storyboard */; };
 		CE0FC04A1E68AEDC0044C8E1 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0491E68AEDC0044C8E1 /* Activity.storyboard */; };
 		CE0FC04D1E68BCAE0044C8E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */; };
+		CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0A41E6E007E0044C8E1 /* AuthService.swift */; };
+		CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0A81E6E53850044C8E1 /* Config.swift */; };
+		CE0FC0B41E6E96590044C8E1 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */; };
+		CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,12 @@
 		CE0FC0471E68AEA00044C8E1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		CE0FC0491E68AEDC0044C8E1 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE0FC0A41E6E007E0044C8E1 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CE0FC0A81E6E53850044C8E1 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CE0FC0B01E6E96580044C8E1 /* SeshhOfficial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeshhOfficial-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		CE0FC0B21E6E96590044C8E1 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,11 +115,17 @@
 			isa = PBXGroup;
 			children = (
 				CE0FC01C1E67AD150044C8E1 /* AppDelegate.swift */,
+				CE0FC0A41E6E007E0044C8E1 /* AuthService.swift */,
+				CE0FC0A81E6E53850044C8E1 /* Config.swift */,
 				CE0FC03E1E67B0E10044C8E1 /* ViewControllers */,
 				CE0FC04B1E68B0BC0044C8E1 /* Storyboards */,
 				CE0FC0231E67AD150044C8E1 /* Assets.xcassets */,
 				CE0FC04C1E68BCAE0044C8E1 /* GoogleService-Info.plist */,
 				CE0FC0281E67AD150044C8E1 /* Info.plist */,
+				CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */,
+				CE0FC0B21E6E96590044C8E1 /* ProgressHUD.h */,
+				CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */,
+				CE0FC0B01E6E96580044C8E1 /* SeshhOfficial-Bridging-Header.h */,
 			);
 			path = SeshhOfficial;
 			sourceTree = "<group>";
@@ -179,6 +195,7 @@
 					CE0FC0181E67AD150044C8E1 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MPDGGLB3DM;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -206,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0FC0B41E6E96590044C8E1 /* ProgressHUD.bundle in Resources */,
 				CE0FC0271E67AD150044C8E1 /* LaunchScreen.storyboard in Resources */,
 				CE0FC04A1E68AEDC0044C8E1 /* Activity.storyboard in Resources */,
 				CE0FC0241E67AD150044C8E1 /* Assets.xcassets in Resources */,
@@ -277,9 +295,12 @@
 				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
+				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
+				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
+				CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */,
 				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
 			);
@@ -397,11 +418,14 @@
 			baseConfigurationReference = 277818AF5038C2E59B5CC9EA /* Pods-SeshhOfficial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MPDGGLB3DM;
 				INFOPLIST_FILE = SeshhOfficial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OGC.SeshhOfficial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeshhOfficial/SeshhOfficial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -411,11 +435,13 @@
 			baseConfigurationReference = 91E433D1978897B72A67EE5C /* Pods-SeshhOfficial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MPDGGLB3DM;
 				INFOPLIST_FILE = SeshhOfficial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OGC.SeshhOfficial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeshhOfficial/SeshhOfficial-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
