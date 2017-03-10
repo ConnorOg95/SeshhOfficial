@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
-        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().tintColor = UIColor(red: 60/255, green: 204/255, blue: 252/255, alpha: 1)
         
         return true
     }

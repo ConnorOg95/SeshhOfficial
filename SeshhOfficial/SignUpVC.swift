@@ -91,10 +91,11 @@ class SignUpVC: UIViewController {
         present(pickerController, animated: true, completion: nil)
     }
     
-    
     @IBAction func dismiss_onClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    //NEED TO CHECK THAT CONFIRMED EMAILS AND PASSWORDS MATCH BEFORE SUBMIT
     
     @IBAction func SignUpBtnPressed(_ sender: Any) {
         
