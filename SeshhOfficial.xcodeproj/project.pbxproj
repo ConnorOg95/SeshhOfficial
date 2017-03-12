@@ -30,6 +30,8 @@
 		CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0A81E6E53850044C8E1 /* Config.swift */; };
 		CE0FC0B41E6E96590044C8E1 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */; };
 		CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */; };
+		CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */; };
+		CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		CE0FC0B21E6E96590044C8E1 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,8 @@
 		CE0FC01B1E67AD150044C8E1 /* SeshhOfficial */ = {
 			isa = PBXGroup;
 			children = (
+				CE0FC1011E75F9690044C8E1 /* Views */,
+				CE0FC1001E75F9010044C8E1 /* Model */,
 				CE0FC01C1E67AD150044C8E1 /* AppDelegate.swift */,
 				CE0FC0A41E6E007E0044C8E1 /* AuthService.swift */,
 				CE0FC0A81E6E53850044C8E1 /* Config.swift */,
@@ -157,6 +163,22 @@
 				CE0FC0251E67AD150044C8E1 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE0FC1001E75F9010044C8E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CE0FC1011E75F9690044C8E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +316,9 @@
 			files = (
 				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
+				CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */,
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
+				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
