@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cD5-L7-ycD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kDz-U3-DCs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Caption/Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T7U-Py-81p">
-                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <rect key="frame" x="16" y="40" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X0s-9k-Gwl"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="llw-cA-1tV">
-                                <rect key="frame" x="16" y="142" width="343" height="120"/>
+                                <rect key="frame" x="16" y="78" width="343" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="QZi-CE-p7Y"/>
@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPB-0I-H5G">
-                                <rect key="frame" x="16" y="270" width="343" height="30"/>
+                                <rect key="frame" x="16" y="206" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VBZ-sw-yXO"/>
                                 </constraints>
@@ -51,13 +51,13 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImg" translatesAutoresizingMaskIntoConstraints="NO" id="11n-1a-qlO">
-                                <rect key="frame" x="16" y="346" width="343" height="150"/>
+                                <rect key="frame" x="16" y="282" width="343" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="pqz-p7-Oly"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymN-17-gsH">
-                                <rect key="frame" x="16" y="308" width="343" height="30"/>
+                                <rect key="frame" x="16" y="244" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WBG-5h-yTG"/>
                                 </constraints>
@@ -66,7 +66,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjK-KH-sKt">
-                                <rect key="frame" x="16" y="516" width="343" height="30"/>
+                                <rect key="frame" x="16" y="452" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j7r-Se-be0"/>
@@ -76,7 +76,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jis-1B-5Ig">
-                                <rect key="frame" x="16" y="566" width="343" height="30"/>
+                                <rect key="frame" x="16" y="502" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N8r-Ae-mHK"/>
@@ -84,6 +84,9 @@
                                 <state key="normal" title="Post Seshh">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="postBtnPressed:" destination="BLe-7l-dYL" eventType="touchUpInside" id="d7q-kK-j1V"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,9 +142,13 @@
                     <tabBarItem key="tabBarItem" title="Post" image="Photo" id="K7b-0v-ulY"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b21-rt-ZhK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="b21-rt-ZhK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23529411759999999" green="0.80000000000000004" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

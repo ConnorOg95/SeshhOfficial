@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class PostSeshhVC: UIViewController {
     
@@ -98,7 +99,11 @@ class PostSeshhVC: UIViewController {
         let postsReference = ref.child("seshhPosts")
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId)
-        newPostReference.setValue(["photoUrl": photoUrl, "title": titleTxtFld.text!, "description": descriptionTxtView.text!], withCompletionBlock: {
+        guard let currentUser = FIRAuth.auth()?.currentUser else {
+            return
+        }
+        let currentUserId = currentUser.uid
+        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "title": titleTxtFld.text!, "description": descriptionTxtView.text!], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)

@@ -9,17 +9,20 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import SDWebImage
 
 class SeshhFeedVC: UIViewController {
 
     @IBOutlet weak var postTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var posts = [Post]()
+    var users = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postTableView.estimatedRowHeight = 521
+        postTableView.estimatedRowHeight = 532
         postTableView.rowHeight = UITableViewAutomaticDimension
         postTableView.dataSource = self
         loadPosts()
@@ -30,30 +33,48 @@ class SeshhFeedVC: UIViewController {
     
     func loadPosts() {
         
-        FIRDatabase.database().reference().child("seshhs").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
-            
-            if let dict = snapshot.value as? [String: Any] {
-                let newPost = Post.transformPost(dict: dict)
-                self.posts.append(newPost)
+        activityIndicatorView.startAnimating()
+        PostApi().observePosts() { (post) in
+            self.fetchUser(uid: post.uid!, completed: {
+                self.posts.append(post)
+                self.activityIndicatorView.stopAnimating()
                 self.postTableView.reloadData()
-            }
-            
+            })
         }
     }
+    
+    func fetchUser(uid: String, completed: @escaping () -> Void) {
+        
+        Api.user.observeUser(withId: uid, completion: {
+            user in
+            self.users.append(user)
+            completed()
+            })
+
+    }
+
 
     
     @IBAction func logout_TouchUpInside(_ sender: Any) {
         do {
             try FIRAuth.auth()?.signOut()
-        } catch let logoutError {
-            print("CONNOR: LOGOUT ERROR - \(logoutError)")
-        }
+            let storyboard = UIStoryboard(name: "Start", bundle: nil)
+            let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
+            self.present(signInVC, animated: true, completion: nil)
         
-        let storyboard = UIStoryboard(name: "Start", bundle: nil)
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
-        self.present(signInVC, animated: true, completion: nil)
+    } catch let logoutError {
+        print("CONNOR: LOGOUT ERROR - \(logoutError)")
+        }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CommentSegue" {
+            let commentVC = segue.destination as! CommentVC
+            let postId = sender as! String
+            commentVC.postId = postId
+        }
+    }
+    
 }
 
 extension SeshhFeedVC: UITableViewDataSource {
@@ -65,10 +86,11 @@ extension SeshhFeedVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
-        //        cell.textLabel?.text = posts[indexPath.row].caption
-        //        cell.backgroundColor = .red
+        let post = posts[indexPath.row]
+        let user = users[indexPath.row]
+        cell.post = post
+        cell.user = user
+        cell.seshhFeedVC = self
         return cell
     }
-    
-    
 }

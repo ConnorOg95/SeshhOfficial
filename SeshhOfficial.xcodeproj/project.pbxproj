@@ -32,6 +32,15 @@
 		CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */; };
 		CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */; };
 		CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */; };
+		CE15E2BE1E78BBB800D2AEE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2BD1E78BBB800D2AEE0 /* User.swift */; };
+		CE15E2C41E89B33900D2AEE0 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */; };
+		CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */; };
+		CE15E2CA1E98931100D2AEE0 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2C91E98931100D2AEE0 /* PostApi.swift */; };
+		CE15E2CC1E9895A200D2AEE0 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CB1E9895A200D2AEE0 /* UserApi.swift */; };
+		CE15E2CE1E99BB6500D2AEE0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CD1E99BB6500D2AEE0 /* Comment.swift */; };
+		CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */; };
+		CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */; };
+		CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +74,15 @@
 		CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		CE15E2BD1E78BBB800D2AEE0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		CE15E2C91E98931100D2AEE0 /* PostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		CE15E2CB1E9895A200D2AEE0 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		CE15E2CD1E99BB6500D2AEE0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
+		CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +150,11 @@
 				CE0FC0B21E6E96590044C8E1 /* ProgressHUD.h */,
 				CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */,
 				CE0FC0B01E6E96580044C8E1 /* SeshhOfficial-Bridging-Header.h */,
+				CE15E2C91E98931100D2AEE0 /* PostApi.swift */,
+				CE15E2CB1E9895A200D2AEE0 /* UserApi.swift */,
+				CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */,
+				CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */,
+				CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */,
 			);
 			path = SeshhOfficial;
 			sourceTree = "<group>";
@@ -146,6 +169,7 @@
 				CE0FC0381E67B0570044C8E1 /* PostSeshhVC.swift */,
 				CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */,
 				CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */,
+				CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */,
+				CE15E2BD1E78BBB800D2AEE0 /* User.swift */,
+				CE15E2CD1E99BB6500D2AEE0 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */,
+				CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -320,13 +347,22 @@
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
 				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
+				CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */,
+				CE15E2C41E89B33900D2AEE0 /* CommentVC.swift in Sources */,
+				CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */,
+				CE15E2BE1E78BBB800D2AEE0 /* User.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
+				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
 				CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */,
 				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,
+				CE15E2CA1E98931100D2AEE0 /* PostApi.swift in Sources */,
+				CE15E2CE1E99BB6500D2AEE0 /* Comment.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
+				CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */,
+				CE15E2CC1E9895A200D2AEE0 /* UserApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
