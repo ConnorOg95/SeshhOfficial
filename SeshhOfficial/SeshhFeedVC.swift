@@ -35,7 +35,12 @@ class SeshhFeedVC: UIViewController {
         
         activityIndicatorView.startAnimating()
         PostApi().observePosts() { (post) in
-            self.fetchUser(uid: post.uid!, completed: {
+            
+            guard let postId = post.uid else {
+                return
+            }
+            
+            self.fetchUser(uid: postId, completed: {
                 self.posts.append(post)
                 self.activityIndicatorView.stopAnimating()
                 self.postTableView.reloadData()
