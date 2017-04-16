@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 
 class PostTableViewCell: UITableViewCell {
     
@@ -26,8 +24,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var buddiesDisplayBtn: UIButton!
     
     var seshhFeedVC: SeshhFeedVC?
-    var postRef: FIRDatabaseReference!
-    
     var post: Post? {
         didSet {
             updateView()
@@ -40,6 +36,8 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+    // UPDATING THE POST CELL
+    
     func updateView() {
         
         titleLbl.text = post?.title
@@ -47,21 +45,8 @@ class PostTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             postPhotoImgView.sd_setImage(with: photoUrl)
         }
-        Api.post.REF_POSTS.child(post!.id!).observeSingleEvent(of: .value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let post = Post.transformPost(dict: dict, key: snapshot.key)
-                self.updateLike(post: post)
-            }
         
-        })
-        updateLike(post: post!)
-        Api.post.REF_POSTS.child(post!.id!).observe(.childChanged, with: {
-            snapshot in
-            if let value = snapshot.value as? Int {
-                self.likesDisplayBtn.setTitle("\(value) likes", for: UIControlState.normal)
-            }
-        })
+        self.updateLike(post: self.post!)
         
     }
     
@@ -74,7 +59,7 @@ class PostTableViewCell: UITableViewCell {
             return
         }
         if count != 0 {
-            likesDisplayBtn.setTitle("\(count) likes", for: UIControlState.normal)
+            likesDisplayBtn.setTitle("Likes: \(count)", for: UIControlState.normal)
         } else {
             likesDisplayBtn.setTitle("Be the first to like this", for: UIControlState.normal)
         }
@@ -105,41 +90,21 @@ class PostTableViewCell: UITableViewCell {
         
     }
     
+    // LIKE BUTTON PRESSED
+    
     func likeImgViewPressed() {
-        postRef = Api.post.REF_POSTS.child(post!.id!)
-        incrementLikes(forRef: postRef)
-        
-    }
-    func incrementLikes(forRef ref: FIRDatabaseReference) {
-        ref.runTransactionBlock({ (currentData: FIRMutableData) -> FIRTransactionResult in
-            if var post = currentData.value as? [String: AnyObject], let uid = FIRAuth.auth()?.currentUser?.uid {
-                var likes: Dictionary<String, Bool>
-                likes = post["likes"] as? [String: Bool] ?? [:]
-                var likeCount = post["likeCount"] as? Int ?? 0
-                if let _ = likes[uid] {
-                    likeCount -= 1
-                    likes.removeValue(forKey: uid)
-                } else {
-                    likeCount += 1
-                    likes[uid] = true
-                }
-                post["likeCount"] = likeCount as AnyObject?
-                post["likes"] = likes as AnyObject?
-                currentData.value = post
-                return FIRTransactionResult.success(withValue: currentData)
-            }
-            return FIRTransactionResult.success(withValue: currentData)
-        }) { (error, committed, snapshot) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            if let dict = snapshot?.value as? [String: Any] {
-                let post = Post.transformPost(dict: dict, key: snapshot!.key)
-                self.updateLike(post: post)
-            }
-            
+        Api.post.incrementLikes(postId: post!.id!, onSucess: { (post) in
+            self.updateLike(post: post)
+            self.post?.likes = post.likes
+            self.post?.isLiked = post.isLiked
+            self.post?.likeCount = post.likeCount
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+//        incrementLikes(forRef: postRef)
         }
     }
+    
+    // COMMENT BUTTON PRESSED
     
     func commentImgViewPressed() {
         if let id = post?.id {
@@ -147,6 +112,8 @@ class PostTableViewCell: UITableViewCell {
 
         }
     }
+    
+    // NEED TO IMPLEMENT A BETTER IMG/ANIMATION
     
     override func prepareForReuse() {
         super.prepareForReuse()

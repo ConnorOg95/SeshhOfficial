@@ -56,4 +56,15 @@ class AuthService {
         newUserReference.setValue(["username": username, "email": email, "profileImgURL": profileImgURL])
         onSuccess()
     }
+    
+    static func logout (onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            onSuccess()
+        } catch let logoutError {
+            onError(logoutError.localizedDescription)
+            
+        }
+        
+    }
 }

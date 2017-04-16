@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseStorage
-import FirebaseAuth
 
 class PostSeshhVC: UIViewController {
     
@@ -41,6 +38,8 @@ class PostSeshhVC: UIViewController {
         handlePost()
     }
     
+    // IMPROVING USER INTERACTION
+    
     func handlePost() {
         
         if selectedImg != nil {
@@ -59,6 +58,7 @@ class PostSeshhVC: UIViewController {
         view.endEditing(true)
         
     }
+    // IMAGE PICKER
     
     func handleSelectPhoto() {
         
@@ -73,48 +73,22 @@ class PostSeshhVC: UIViewController {
         handlePost()
     }
     
+    // SUBMIT POST BUTTON PRESSED
+    
     @IBAction func postBtnPressed(_ sender: Any) {
         
         ProgressHUD.show("Processing...", interaction: false)
         if let profileImg = self.selectedImg, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-            let photoIdString = NSUUID().uuidString
-            let storageRef = FIRStorage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("seshhPostImgs").child(photoIdString)
-            storageRef.put(imageData, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    ProgressHUD.showError(error!.localizedDescription)
-                    return
-                }
-                let photoUrl = metadata?.downloadURL()?.absoluteString
-                self.sendDataToDatabase(photoUrl: photoUrl!)
+            HelpService.uploadDataToServer(data: imageData, title: titleTxtFld.text!, onSuccess: {
+                self.clearPost()
+                self.tabBarController?.selectedIndex = 0
             })
-            
         } else {
             ProgressHUD.showError("Image Needs To Be Selected")
         }
     }
     
-    func sendDataToDatabase(photoUrl: String) {
-        
-        let ref = FIRDatabase.database().reference()
-        let postsReference = ref.child("seshhPosts")
-        let newPostId = postsReference.childByAutoId().key
-        let newPostReference = postsReference.child(newPostId)
-        guard let currentUser = FIRAuth.auth()?.currentUser else {
-            return
-        }
-        let currentUserId = currentUser.uid
-        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "title": titleTxtFld.text!, "description": descriptionTxtView.text!], withCompletionBlock: {
-            (error, ref) in
-            if error != nil {
-                ProgressHUD.showError(error!.localizedDescription)
-                return
-            }
-            ProgressHUD.showSuccess("Success")
-            self.clearPost()
-            self.tabBarController?.selectedIndex = 0
-            
-        })
-    }
+    // CLEAR ALL CELLS IN POST - MAY NEED TO BE REMOVED
     
     func clearPost() {
         self.titleTxtFld.text = ""
@@ -123,6 +97,8 @@ class PostSeshhVC: UIViewController {
     }
     
 }
+
+// IMAGE SELECTION - NEED TO IMPLEMENT IMAGE EDITING
 
 extension PostSeshhVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

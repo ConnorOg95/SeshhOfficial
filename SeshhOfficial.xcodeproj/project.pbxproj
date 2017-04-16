@@ -41,6 +41,13 @@
 		CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */; };
 		CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */; };
 		CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */; };
+		CEF248111E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */; };
+		CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */; };
+		CEF248151E9DC726007BEAB0 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */; };
+		CEF248171E9DDB0D007BEAB0 /* HelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248161E9DDB0D007BEAB0 /* HelpService.swift */; };
+		CEF8B23F1EA2AEE800236D2A /* BuddiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */; };
+		CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */; };
+		CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2421EA39CFB00236D2A /* FollowApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +90,13 @@
 		CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
 		CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
+		CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
+		CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostApi.swift; sourceTree = "<group>"; };
+		CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF248161E9DDB0D007BEAB0 /* HelpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpService.swift; sourceTree = "<group>"; };
+		CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesVC.swift; sourceTree = "<group>"; };
+		CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewCell.swift; sourceTree = "<group>"; };
+		CEF8B2421EA39CFB00236D2A /* FollowApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +169,9 @@
 				CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */,
 				CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */,
 				CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */,
+				CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */,
+				CEF248161E9DDB0D007BEAB0 /* HelpService.swift */,
+				CEF8B2421EA39CFB00236D2A /* FollowApi.swift */,
 			);
 			path = SeshhOfficial;
 			sourceTree = "<group>";
@@ -170,6 +187,7 @@
 				CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */,
 				CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */,
 				CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */,
+				CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +222,9 @@
 			children = (
 				CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */,
 				CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */,
+				CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */,
+				CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */,
+				CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -341,6 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */,
+				CEF248111E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift in Sources */,
 				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
 				CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */,
@@ -353,13 +376,18 @@
 				CE15E2BE1E78BBB800D2AEE0 /* User.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
+				CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
 				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
+				CEF8B23F1EA2AEE800236D2A /* BuddiesVC.swift in Sources */,
 				CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */,
 				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,
+				CEF248151E9DC726007BEAB0 /* ProfileCollectionViewCell.swift in Sources */,
+				CEF248171E9DDB0D007BEAB0 /* HelpService.swift in Sources */,
 				CE15E2CA1E98931100D2AEE0 /* PostApi.swift in Sources */,
 				CE15E2CE1E99BB6500D2AEE0 /* Comment.swift in Sources */,
+				CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
 				CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */,
 				CE15E2CC1E9895A200D2AEE0 /* UserApi.swift in Sources */,

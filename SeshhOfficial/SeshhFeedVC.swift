@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 import SDWebImage
 
 class SeshhFeedVC: UIViewController {
@@ -30,6 +28,7 @@ class SeshhFeedVC: UIViewController {
         //        var post = Post(captionText: "test", photoUrlString: "url1")
         
     }
+    
     
     func loadPosts() {
         
@@ -57,18 +56,17 @@ class SeshhFeedVC: UIViewController {
             })
 
     }
-
-
+    
+    // LOGGING OUT USER
     
     @IBAction func logout_TouchUpInside(_ sender: Any) {
-        do {
-            try FIRAuth.auth()?.signOut()
+        
+        AuthService.logout(onSuccess: {
             let storyboard = UIStoryboard(name: "Start", bundle: nil)
             let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
             self.present(signInVC, animated: true, completion: nil)
-        
-    } catch let logoutError {
-        print("CONNOR: LOGOUT ERROR - \(logoutError)")
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
         }
     }
     
@@ -83,6 +81,8 @@ class SeshhFeedVC: UIViewController {
 }
 
 extension SeshhFeedVC: UITableViewDataSource {
+    
+    // TABLE VIEW CODE
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

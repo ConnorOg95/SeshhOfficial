@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
 
 class SignUpVC: UIViewController {
     
@@ -25,6 +22,8 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // NEED TO SORT ALL THIS OUT!
         
         usernameTxtFld.backgroundColor = UIColor.clear
         usernameTxtFld.tintColor = UIColor.white

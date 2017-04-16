@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 
 class CommentVC: UIViewController {
 
@@ -42,6 +40,8 @@ class CommentVC: UIViewController {
         view.endEditing(true)
     }
     
+    // SHOWING & HIDING KEYBOARD
+    
     func keyboardWillShow(_ notification: NSNotification) {
         let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         UIView.animate(withDuration: 0.3) {
@@ -56,6 +56,8 @@ class CommentVC: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    // DOWNLOADING COMMENTS FROM DATABASE
     
     func loadComments() {
         
@@ -87,6 +89,8 @@ class CommentVC: UIViewController {
         commentTxtFld.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
+    // IMPROVING USER INTERACTION
+    
     func textFieldDidChange() {
         if let commentTxt = commentTxtFld.text, !commentTxt.isEmpty {
             sendCommentBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
@@ -97,6 +101,8 @@ class CommentVC: UIViewController {
         sendCommentBtn.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
         sendCommentBtn.isEnabled = false
     }
+    
+    // SHOWING AND HIDING THE TAB BAR
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -107,13 +113,15 @@ class CommentVC: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    // SUBMITTING COMMENT
 
     @IBAction func sendCommentBtnPressed(_ sender: Any) {
         
         let commentsReference = Api.comment.REF_COMMENTS
         let newCommentId = commentsReference.childByAutoId().key
         let newCommentReference = commentsReference.child(newCommentId)
-        guard let currentUser = FIRAuth.auth()?.currentUser else {
+        guard let currentUser = Api.user.CURRENT_USER else {
             return
         }
         let currentUserId = currentUser.uid
@@ -135,12 +143,16 @@ class CommentVC: UIViewController {
         })
     }
     
+    // CLEARING FIELDS AFTER POSTING
+    
     func empty() {
         self.commentTxtFld.text = ""
         self.sendCommentBtn.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
         self.sendCommentBtn.isEnabled = false
     }
 }
+
+// EXTENSION FOR TABLEVIEW CODING
 
 extension CommentVC: UITableViewDataSource {
     

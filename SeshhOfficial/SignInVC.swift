@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SignInVC: UIViewController {
     
@@ -20,6 +19,8 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // NEED TO SORT THIS OUT!
         
         emailTxtFld.backgroundColor = UIColor.clear
         emailTxtFld.tintColor = UIColor.white
@@ -45,14 +46,18 @@ class SignInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // HIDE THE KEYBOARD
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
+    // AUTO LOG IN
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if FIRAuth.auth()?.currentUser != nil {
+        if Api.user.CURRENT_USER != nil {
             self.performSegue(withIdentifier: "signInToTabBarVC", sender: nil)
         }
     }

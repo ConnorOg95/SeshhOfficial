@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class UserApi {
     
@@ -17,9 +18,47 @@ class UserApi {
         REF_USERS.child(uid).observeSingleEvent(of: .value, with: {
             snapshot in
             if let dict = snapshot.value as? [String: Any] {
-                let user = User.transformUser(dict: dict)
+                let user = User.transformUser(dict: dict, key: snapshot.key)
                 completion(user)
             }
         })
+    }
+    
+    func observeCurrentUser(completion: @escaping (User) -> Void) {
+        guard let currentUser = FIRAuth.auth()?.currentUser else {
+            return
+        }
+        REF_USERS.child(currentUser.uid).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String: Any] {
+                let user = User.transformUser(dict: dict, key: snapshot.key)
+                completion(user)
+            }
+        })
+    }
+    
+    func observeUsers(completion: @escaping (User) -> Void) {
+        REF_USERS.observe(.childAdded, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String: Any] {
+                let user = User.transformUser(dict: dict, key: snapshot.key)
+                completion(user)
+            }
+        })
+    }
+    
+    var CURRENT_USER: FIRUser? {
+        if let currentUser = FIRAuth.auth()?.currentUser {
+            return currentUser
+        }
+        return nil
+    }
+    
+    var REF_CURRENT_USER: FIRDatabaseReference? {
+        guard let currentUser = FIRAuth.auth()?.currentUser else {
+            return nil
+        }
+        
+        return REF_USERS.child(currentUser.uid)
     }
 }
