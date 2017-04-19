@@ -48,6 +48,7 @@
 		CEF8B23F1EA2AEE800236D2A /* BuddiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */; };
 		CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */; };
 		CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2421EA39CFB00236D2A /* FollowApi.swift */; };
+		CEF8B2451EA7EB6D00236D2A /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesVC.swift; sourceTree = "<group>"; };
 		CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewCell.swift; sourceTree = "<group>"; };
 		CEF8B2421EA39CFB00236D2A /* FollowApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
+		CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */,
 				CEF248161E9DDB0D007BEAB0 /* HelpService.swift */,
 				CEF8B2421EA39CFB00236D2A /* FollowApi.swift */,
+				CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */,
 			);
 			path = SeshhOfficial;
 			sourceTree = "<group>";
@@ -223,8 +226,8 @@
 				CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */,
 				CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */,
 				CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */,
-				CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */,
 				CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */,
+				CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
 				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
+				CEF8B2451EA7EB6D00236D2A /* FeedApi.swift in Sources */,
 				CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */,
 				CE15E2C41E89B33900D2AEE0 /* CommentVC.swift in Sources */,
 				CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */,

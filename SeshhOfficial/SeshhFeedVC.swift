@@ -25,25 +25,28 @@ class SeshhFeedVC: UIViewController {
         postTableView.dataSource = self
         loadPosts()
         
-        //        var post = Post(captionText: "test", photoUrlString: "url1")
-        
     }
     
     
     func loadPosts() {
         
         activityIndicatorView.startAnimating()
-        PostApi().observePosts() { (post) in
-            
+        
+        Api.feed.observeFeed(withId: Api.user.CURRENT_USER!.uid) { (post) in
             guard let postId = post.uid else {
                 return
             }
             
             self.fetchUser(uid: postId, completed: {
                 self.posts.append(post)
-                self.activityIndicatorView.stopAnimating()
                 self.postTableView.reloadData()
             })
+        }
+        
+        Api.feed.observeFeedRemoved(withId: Api.user.CURRENT_USER!.uid) { (key) in
+            self.posts = self.posts.filter { $0.id != key }
+            self.postTableView.reloadData()
+            self.activityIndicatorView.stopAnimating()
         }
     }
     
