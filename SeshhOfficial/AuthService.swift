@@ -57,6 +57,40 @@ class AuthService {
         onSuccess()
     }
     
+    static func updateUserInfo(username: String, email: String, imageData: Data, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
+        
+        Api.user.CURRENT_USER?.updateEmail(email, completion: { (error) in
+            if error != nil {
+                onError(error!.localizedDescription)
+            } else {
+                let uid = Api.user.CURRENT_USER?.uid
+                let storageRef = FIRStorage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("profile_image").child(uid!)
+                
+                storageRef.put(imageData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    let profileImgURL = metadata?.downloadURL()?.absoluteString
+                    self.updateDatabase(profileImgURL: profileImgURL!, username: username, email: email, onSuccess: onSuccess, onError: onError)
+                    // self.setUserInformation(profileImgURL: profileImgURL!, username: username, email: email, uid: uid!, onSuccess: onSuccess)
+                })
+                
+            }
+        })
+    }
+    
+    static func updateDatabase(profileImgURL: String, username: String, email: String, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
+        let dict = ["username": username, "username_lowercase": username.lowercased(), "email": email, "profileImgURL": profileImgURL]
+        Api.user.REF_CURRENT_USER?.updateChildValues(dict, withCompletionBlock: { (error, ref) in
+            if error != nil {
+                 onError(error!.localizedDescription)
+            } else {
+                 onSuccess()
+            }
+            
+        })
+    }
+    
     static func logout (onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void) {
         do {
             try FIRAuth.auth()?.signOut()

@@ -70,9 +70,17 @@ extension ProfileUserVC: UICollectionViewDataSource {
         if let user = self.user {
             headerViewCell.user = user
             headerViewCell.delegate = delegate
+            headerViewCell.delegate2 = self
+
         }
         //        headerViewCell.updateView()
         return headerViewCell
+    }
+}
+
+extension ProfileUserVC: HeaderProfileCollectionReusableViewDelegateSwitchSettingTVC {
+    func goToSettingsTVC() {
+        performSegue(withIdentifier: "ProfileUserToSettingsSegue", sender: nil)
     }
 }
 

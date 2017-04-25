@@ -8,8 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+
 protocol HeaderProfileCollectionReusableViewDelegate {
     func updateFollowBtn(forUser user: User)
+}
+
+protocol HeaderProfileCollectionReusableViewDelegateSwitchSettingTVC {
+    func goToSettingsTVC ()
 }
 
 class HeaderProfileCollectionReusableView: UICollectionReusableView {
@@ -27,6 +32,8 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
 //        nameLbl.text = ""
 //        profileImgView.image = UIImage(named: "placeholderImg")
 //    }
+    
+    var delegate2: HeaderProfileCollectionReusableViewDelegateSwitchSettingTVC?
     var delegate: HeaderProfileCollectionReusableViewDelegate?
     var user: User? {
         didSet {
@@ -57,9 +64,14 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         
         if user?.id == Api.user.CURRENT_USER?.uid {
             followBtn.setTitle("Edit Profile", for: UIControlState.normal)
+            followBtn.addTarget(self, action: #selector(self.goToSettingsTVC), for: UIControlEvents.touchUpInside)
         } else {
             updateStateFollowBtn()
         }
+    }
+    
+    func goToSettingsTVC() {
+        delegate2?.goToSettingsTVC()
     }
     
     func updateStateFollowBtn() {

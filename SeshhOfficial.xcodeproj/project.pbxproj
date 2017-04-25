@@ -52,6 +52,7 @@
 		CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2461EA7FE2B00236D2A /* SearchVC.swift */; };
 		CEF8B2491EA94DDB00236D2A /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */; };
 		CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */; };
+		CEF8B24D1EAFEC2500236D2A /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		CEF8B2461EA7FE2B00236D2A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
+		CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */,
 				CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */,
 				CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */,
+				CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
 				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
+				CEF8B24D1EAFEC2500236D2A /* SettingsTVC.swift in Sources */,
 				CEF8B23F1EA2AEE800236D2A /* BuddiesVC.swift in Sources */,
 				CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */,
 				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,

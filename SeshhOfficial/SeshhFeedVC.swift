@@ -61,19 +61,6 @@ class SeshhFeedVC: UIViewController {
 
     }
     
-    // LOGGING OUT USER
-    
-    @IBAction func logout_TouchUpInside(_ sender: Any) {
-        
-        AuthService.logout(onSuccess: {
-            let storyboard = UIStoryboard(name: "Start", bundle: nil)
-            let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
-            self.present(signInVC, animated: true, completion: nil)
-        }) { (errorMessage) in
-            ProgressHUD.showError(errorMessage)
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CommentSegue" {
             let commentVC = segue.destination as! CommentVC

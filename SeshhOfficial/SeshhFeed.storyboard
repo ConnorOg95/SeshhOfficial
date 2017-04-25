@@ -302,12 +302,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Seshh Feed" id="Bp2-da-j55">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="8pa-Pq-zf8">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="logout_TouchUpInside:" destination="npp-aH-UZf" id="iai-Oo-rtS"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="dmZ-lL-JVl">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -556,6 +550,6 @@
         <image name="share" width="37" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L6j-IB-D6g"/>
+        <segue reference="hEd-qi-HDg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,7 +45,13 @@ class ProfileVC: UIViewController {
             })
         })
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileToSettingsSegue" {
+            let settingsTVC = segue.destination as! SettingsTVC
+            settingsTVC.delegate = self
+        }
+    }
 
 }
 
@@ -67,9 +73,16 @@ extension ProfileVC: UICollectionViewDataSource {
         let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
         if let user = self.user {
             headerViewCell.user = user
+            headerViewCell.delegate2 = self
         }
 //        headerViewCell.updateView()
         return headerViewCell
+    }
+}
+
+extension ProfileVC: HeaderProfileCollectionReusableViewDelegateSwitchSettingTVC {
+    func goToSettingsTVC() {
+        performSegue(withIdentifier: "ProfileToSettingsSegue", sender: nil)
     }
 }
 
@@ -85,5 +98,11 @@ extension ProfileVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width / 3 - 1, height: collectionView.frame.size.width / 3 - 1)
+    }
+}
+
+extension ProfileVC: SettingsTVCDelegate {
+    func updateUserInfo() {
+        self.fetchUser()
     }
 }
