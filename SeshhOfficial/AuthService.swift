@@ -53,7 +53,7 @@ class AuthService {
         let ref = FIRDatabase.database().reference()
         let usersReference = ref.child("users")
         let newUserReference = usersReference.child(uid)
-        newUserReference.setValue(["username": username, "email": email, "profileImgURL": profileImgURL])
+        newUserReference.setValue(["username": username, "username_lowercase": username.lowercased(), "email": email, "profileImgURL": profileImgURL])
         onSuccess()
     }
     

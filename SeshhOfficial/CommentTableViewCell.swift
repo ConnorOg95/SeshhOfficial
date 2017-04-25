@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol CommentTableViewCellDelegate {
+    func goToProfileUserVC(userId: String)
+}
 
 class CommentTableViewCell: UITableViewCell {
 
@@ -14,6 +17,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var commentLbl: UILabel!
     
+    var delegate: CommentTableViewCellDelegate?
     var comment: Comment? {
         didSet {
             updateView()
@@ -43,7 +47,17 @@ class CommentTableViewCell: UITableViewCell {
         super.awakeFromNib()
         nameLbl.text = ""
         commentLbl.text = ""
+        let tapGestureForNameLbl = UITapGestureRecognizer(target: self, action: #selector(self.nameLblPressed))
+        nameLbl.addGestureRecognizer(tapGestureForNameLbl)
+        nameLbl.isUserInteractionEnabled = true
     }
+    
+    func nameLblPressed() {
+        if let id = user?.id {
+            delegate?.goToProfileUserVC(userId: id)
+        }
+    }
+
     
     override func prepareForReuse() {
         super.prepareForReuse()

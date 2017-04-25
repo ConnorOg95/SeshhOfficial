@@ -7,6 +7,10 @@
 //
 
 import UIKit
+protocol PostTableViewCellDelegate {
+    func goToCommentVC(postId: String)
+    func goToProfileUserVC(userId: String)
+}
 
 class PostTableViewCell: UITableViewCell {
     
@@ -23,7 +27,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likesDisplayBtn: UIButton!
     @IBOutlet weak var buddiesDisplayBtn: UIButton!
     
-    var seshhFeedVC: SeshhFeedVC?
+    var delegate: PostTableViewCellDelegate?
     var post: Post? {
         didSet {
             updateView()
@@ -87,7 +91,15 @@ class PostTableViewCell: UITableViewCell {
         let tapGestureForLikeImgView = UITapGestureRecognizer(target: self, action: #selector(self.likeImgViewPressed))
         likeImgView.addGestureRecognizer(tapGestureForLikeImgView)
         likeImgView.isUserInteractionEnabled = true
-        
+        let tapGestureForNameLbl = UITapGestureRecognizer(target: self, action: #selector(self.nameLblPressed))
+        usernameLbl.addGestureRecognizer(tapGestureForNameLbl)
+        usernameLbl.isUserInteractionEnabled = true
+    }
+    
+    func nameLblPressed() {
+        if let id = user?.id {
+            delegate?.goToProfileUserVC(userId: id)
+        }
     }
     
     // LIKE BUTTON PRESSED
@@ -108,10 +120,11 @@ class PostTableViewCell: UITableViewCell {
     
     func commentImgViewPressed() {
         if let id = post?.id {
-            seshhFeedVC?.performSegue(withIdentifier: "CommentSegue", sender: id)
-
+            delegate?.goToCommentVC(postId: id)
         }
     }
+    
+    
     
     // NEED TO IMPLEMENT A BETTER IMG/ANIMATION
     

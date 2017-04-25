@@ -34,6 +34,15 @@ class BuddiesVC: UIViewController {
     func isFollowing(userId: String, completed: @escaping (Bool) -> Void) {
         Api.Follow.isFollowing(userId: userId, completed: completed)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileSegue" {
+            let profileVC = segue.destination as! ProfileUserVC
+            let userId = sender as! String
+            profileVC.userId = userId
+            profileVC.delegate = self
+        }
+    }
 }
 
 extension BuddiesVC: UITableViewDataSource {
@@ -49,7 +58,24 @@ extension BuddiesVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuddiesTableViewCell", for: indexPath) as! BuddiesTableViewCell
         let user = users[indexPath.row]
         cell.user = user 
-        
+        cell.delegate = self
         return cell
+    }
+}
+
+extension BuddiesVC: BuddiesTableViewCellDelegate {
+    func goToProfileUserVC(userId: String) {
+        performSegue(withIdentifier: "ProfileSegue", sender: userId)
+    }
+}
+
+extension BuddiesVC: HeaderProfileCollectionReusableViewDelegate {
+    func updateFollowBtn(forUser user: User) {
+        for u in self.users {
+            if u.id == user.id {
+                u.isFollowing = user.isFollowing
+                self.tableView.reloadData()
+            }
+        }
     }
 }

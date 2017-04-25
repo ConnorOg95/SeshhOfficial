@@ -32,7 +32,7 @@ class HelpService {
             return
         }
         let currentUserId = currentUser.uid
-        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "title": title], withCompletionBlock: {
+        newPostReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "title": title, "likeCount": 0], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 return

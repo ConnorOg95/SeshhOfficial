@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol BuddiesTableViewCellDelegate {
+    func goToProfileUserVC(userId: String)
+}
 
 class BuddiesTableViewCell: UITableViewCell {
     
@@ -14,6 +17,7 @@ class BuddiesTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var followBtn: UIButton!
     
+    var delegate: BuddiesTableViewCellDelegate?
     var user: User? {
         didSet {
             updateView()
@@ -80,7 +84,15 @@ class BuddiesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nameLblPressed))
+        nameLbl.addGestureRecognizer(tapGesture)
+        nameLbl.isUserInteractionEnabled = true
+    }
+    
+    func nameLblPressed() {
+        if let id = user?.id {
+            delegate?.goToProfileUserVC(userId: id)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

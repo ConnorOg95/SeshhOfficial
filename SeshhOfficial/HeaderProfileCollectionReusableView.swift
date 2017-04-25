@@ -8,6 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+protocol HeaderProfileCollectionReusableViewDelegate {
+    func updateFollowBtn(forUser user: User)
+}
 
 class HeaderProfileCollectionReusableView: UICollectionReusableView {
     
@@ -17,13 +20,14 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var postCountLbl: UILabel!
     @IBOutlet weak var followingCountLbl: UILabel!
     @IBOutlet weak var followerCountLbl: UILabel!
+    @IBOutlet weak var followBtn: UIButton!
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
 //        nameLbl.text = ""
 //        profileImgView.image = UIImage(named: "placeholderImg")
 //    }
-    
+    var delegate: HeaderProfileCollectionReusableViewDelegate?
     var user: User? {
         didSet {
             updateView()
@@ -38,5 +42,77 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
             let photoUrl = URL(string: photoUrlString)
             self.profileImgView.sd_setImage(with: photoUrl)
         }
+        
+        Api.myPosts.fetchCountMyPosts(userId: user!.id!) { (count) in
+            self.postCountLbl.text = "\(count)"
+        }
+        
+        Api.Follow.fetchCountFollowing(userId: user!.id!) { (count) in
+            self.followingCountLbl.text = "\(count)"
+        }
+        
+        Api.Follow.fetchCountFollowers(userId: user!.id!) { (count) in
+            self.followerCountLbl.text = "\(count)"
+        }
+        
+        if user?.id == Api.user.CURRENT_USER?.uid {
+            followBtn.setTitle("Edit Profile", for: UIControlState.normal)
+        } else {
+            updateStateFollowBtn()
+        }
     }
+    
+    func updateStateFollowBtn() {
+        if user!.isFollowing! {
+            configUnFollowBtn()
+        } else {
+            configFollowBtn()
+        }
+    }
+    
+    func configFollowBtn() {
+        followBtn.layer.borderWidth = 1
+        followBtn.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        followBtn.layer.cornerRadius = 5
+        followBtn.clipsToBounds = true
+        followBtn.setTitleColor(UIColor.white, for: .normal)
+        followBtn.backgroundColor = UIColor(red: 69/255, green: 142/255, blue: 255/255, alpha: 1)
+        self.followBtn.setTitle("Follow", for: UIControlState.normal)
+        followBtn.addTarget(self, action: #selector(self.followAction), for: UIControlEvents.touchUpInside)
+    }
+    
+    func configUnFollowBtn() {
+        followBtn.layer.borderWidth = 1
+        followBtn.layer.borderColor = UIColor(red: 226/255, green: 228/255, blue: 232/255, alpha: 1).cgColor
+        followBtn.layer.cornerRadius = 5
+        followBtn.clipsToBounds = true
+        followBtn.setTitleColor(UIColor.black, for: .normal)
+        followBtn.backgroundColor = UIColor.clear
+        self.followBtn.setTitle("Following", for: UIControlState.normal)
+        followBtn.addTarget(self, action: #selector(self.unFollowAction), for: UIControlEvents.touchUpInside)
+    }
+    
+    func followAction() {
+        if user!.isFollowing! == false {
+            
+            Api.Follow.followAction(withUser: user!.id!)
+            followBtn.removeTarget(self, action: #selector(self.followAction), for: UIControlEvents.touchUpInside)
+            configUnFollowBtn()
+            user!.isFollowing! = true
+            delegate?.updateFollowBtn(forUser: user!)
+        }
+    }
+    
+    func unFollowAction() {
+        if user!.isFollowing! == true {
+            
+            Api.Follow.unFollowAction(withUser: user!.id!)
+            followBtn.removeTarget(self, action: #selector(self.unFollowAction), for: UIControlEvents.touchUpInside)
+            configFollowBtn()
+            user!.isFollowing! = false
+            delegate?.updateFollowBtn(forUser: user!)
+
+        }
+    }
+
 }

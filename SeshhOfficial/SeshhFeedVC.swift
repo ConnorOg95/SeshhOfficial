@@ -43,8 +43,9 @@ class SeshhFeedVC: UIViewController {
             })
         }
         
-        Api.feed.observeFeedRemoved(withId: Api.user.CURRENT_USER!.uid) { (key) in
-            self.posts = self.posts.filter { $0.id != key }
+        Api.feed.observeFeedRemoved(withId: Api.user.CURRENT_USER!.uid) { (post) in
+            self.posts = self.posts.filter { $0.id != post.id }
+            self.users = self.users.filter { $0.id != post.uid }
             self.postTableView.reloadData()
             self.activityIndicatorView.stopAnimating()
         }
@@ -79,6 +80,11 @@ class SeshhFeedVC: UIViewController {
             let postId = sender as! String
             commentVC.postId = postId
         }
+        if segue.identifier == "HomeToProfileSegue" {
+            let profileVC = segue.destination as! ProfileUserVC
+            let userId = sender as! String
+            profileVC.userId = userId
+        }
     }
     
 }
@@ -98,7 +104,16 @@ extension SeshhFeedVC: UITableViewDataSource {
         let user = users[indexPath.row]
         cell.post = post
         cell.user = user
-        cell.seshhFeedVC = self
+        cell.delegate = self
         return cell
+    }
+}
+
+extension SeshhFeedVC: PostTableViewCellDelegate {
+    func goToCommentVC(postId: String) {
+        performSegue(withIdentifier: "CommentSegue", sender: postId)
+    }
+    func goToProfileUserVC(userId: String) {
+        performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
     }
 }

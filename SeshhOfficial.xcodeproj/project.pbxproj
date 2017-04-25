@@ -49,6 +49,9 @@
 		CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */; };
 		CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2421EA39CFB00236D2A /* FollowApi.swift */; };
 		CEF8B2451EA7EB6D00236D2A /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */; };
+		CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2461EA7FE2B00236D2A /* SearchVC.swift */; };
+		CEF8B2491EA94DDB00236D2A /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */; };
+		CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,9 @@
 		CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewCell.swift; sourceTree = "<group>"; };
 		CEF8B2421EA39CFB00236D2A /* FollowApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
 		CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
+		CEF8B2461EA7FE2B00236D2A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0FC0341E67B0010044C8E1 /* SeshhFeedVC.swift */,
+				CEF8B2461EA7FE2B00236D2A /* SearchVC.swift */,
 				CE0FC0301E67AFC80044C8E1 /* SignInVC.swift */,
 				CE0FC0321E67AFD90044C8E1 /* SignUpVC.swift */,
 				CE0FC0361E67B0100044C8E1 /* SeshhMapVC.swift */,
@@ -191,6 +198,8 @@
 				CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */,
 				CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */,
 				CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */,
+				CEF8B2481EA94DDB00236D2A /* DiscoverVC.swift */,
+				CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -368,8 +377,10 @@
 				CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */,
 				CEF248111E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift in Sources */,
 				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
+				CEF8B2491EA94DDB00236D2A /* DiscoverVC.swift in Sources */,
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
 				CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */,
+				CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */,
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
 				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
@@ -380,6 +391,7 @@
 				CE15E2BE1E78BBB800D2AEE0 /* User.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
+				CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */,
 				CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
 				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,

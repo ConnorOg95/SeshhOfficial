@@ -150,6 +150,15 @@ class CommentVC: UIViewController {
         self.sendCommentBtn.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
         self.sendCommentBtn.isEnabled = false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "CommentToProfileSegue" {
+            let profileVC = segue.destination as! ProfileUserVC
+            let userId = sender as! String
+            profileVC.userId = userId
+        }
+    }
 }
 
 // EXTENSION FOR TABLEVIEW CODING
@@ -168,6 +177,11 @@ extension CommentVC: UITableViewDataSource {
         cell.comment = comment
         cell.user = user
         return cell
+    }
+}
+extension CommentVC: CommentTableViewCellDelegate {
+    func goToProfileUserVC(userId: String) {
+        performSegue(withIdentifier: "CommentToProfileSegue", sender: userId)
     }
 }
 
