@@ -1,53 +1,41 @@
 //
-//  SeshhFeedVC.swift
+//  DetailVC.swift
 //  SeshhOfficial
 //
-//  Created by User on 02/03/2017.
+//  Created by User on 26/04/2017.
 //  Copyright © 2017 OGCompany. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class SeshhFeedVC: UIViewController {
-
+class DetailVC: UIViewController {
+    
     @IBOutlet weak var postTableView: UITableView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    var posts = [Post]()
-    var users = [User]()
-    
+    var postId = ""
+    var post = Post()
+    var user = User()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         postTableView.estimatedRowHeight = 532
         postTableView.rowHeight = UITableViewAutomaticDimension
-        postTableView.dataSource = self
-        loadPosts()
         
+        loadPost()
+
     }
     
-    
-    func loadPosts() {
-        
-        activityIndicatorView.startAnimating()
-        
-        Api.feed.observeFeed(withId: Api.user.CURRENT_USER!.uid) { (post) in
+    func loadPost() {
+        Api.post.observePost(withId: postId) { (post) in
             guard let postUid = post.uid else {
                 return
             }
             
             self.fetchUser(uid: postUid, completed: {
-                self.posts.append(post)
+                self.post = post
                 self.postTableView.reloadData()
             })
-        }
-        
-        Api.feed.observeFeedRemoved(withId: Api.user.CURRENT_USER!.uid) { (post) in
-            self.posts = self.posts.filter { $0.id != post.id }
-            self.users = self.users.filter { $0.id != post.uid }
-            self.postTableView.reloadData()
-            self.activityIndicatorView.stopAnimating()
         }
     }
     
@@ -55,40 +43,34 @@ class SeshhFeedVC: UIViewController {
         
         Api.user.observeUser(withId: uid, completion: {
             user in
-            self.users.append(user)
+            self.user = user
             completed()
         })
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CommentSegue" {
+        if segue.identifier == "DetailToCommentSegue" {
             let commentVC = segue.destination as! CommentVC
             let postId = sender as! String
             commentVC.postId = postId
         }
-        if segue.identifier == "HomeToProfileSegue" {
+        if segue.identifier == "DetailToProfileUserSegue" {
             let profileVC = segue.destination as! ProfileUserVC
             let userId = sender as! String
             profileVC.userId = userId
         }
     }
-    
 }
 
-extension SeshhFeedVC: UITableViewDataSource {
-    
-    // TABLE VIEW CODE
+extension DetailVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
-        let post = posts[indexPath.row]
-        let user = users[indexPath.row]
         cell.post = post
         cell.user = user
         cell.delegate = self
@@ -96,11 +78,11 @@ extension SeshhFeedVC: UITableViewDataSource {
     }
 }
 
-extension SeshhFeedVC: PostTableViewCellDelegate {
+extension DetailVC: PostTableViewCellDelegate {
     func goToCommentVC(postId: String) {
-        performSegue(withIdentifier: "CommentSegue", sender: postId)
+        performSegue(withIdentifier: "DetailToCommentSegue", sender: postId)
     }
     func goToProfileUserVC(userId: String) {
-        performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
+        performSegue(withIdentifier: "DetailToProfileUserSegue", sender: userId)
     }
 }

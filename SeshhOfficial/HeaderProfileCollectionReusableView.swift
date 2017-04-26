@@ -41,6 +41,11 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        clearItems()
+    }
+    
     // UPDATING THE PROFILE HEADER VIEW
     
     func updateView() {
@@ -68,6 +73,13 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         } else {
             updateStateFollowBtn()
         }
+    }
+    
+    func clearItems() {
+        self.nameLbl.text = ""
+        self.postCountLbl.text = ""
+        self.followingCountLbl.text = ""
+        self.followerCountLbl.text = ""
     }
     
     func goToSettingsTVC() {

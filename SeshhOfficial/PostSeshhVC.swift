@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PostSeshhVC: UIViewController {
     
@@ -20,6 +21,7 @@ class PostSeshhVC: UIViewController {
     
 
     var selectedImg: UIImage?
+    var videoUrl : URL?
     var buddies: [String] = []
     
     override func viewDidLoad() {
@@ -64,6 +66,7 @@ class PostSeshhVC: UIViewController {
         
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
+        pickerController.mediaTypes = ["public.image, public.movie"]
         present(pickerController, animated: true, completion: nil)
         
     }
@@ -79,7 +82,8 @@ class PostSeshhVC: UIViewController {
         
         ProgressHUD.show("Processing...", interaction: false)
         if let profileImg = self.selectedImg, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-            HelpService.uploadDataToServer(data: imageData, title: titleTxtFld.text!, onSuccess: {
+            let ratio = profileImg.size.width / profileImg.size.height
+            HelpService.uploadDataToServer(data: imageData, videoUrl: self.videoUrl, ratio: ratio, title: titleTxtFld.text!, onSuccess: {
                 self.clearPost()
                 self.tabBarController?.selectedIndex = 0
             })
@@ -104,12 +108,33 @@ extension PostSeshhVC: UIImagePickerControllerDelegate, UINavigationControllerDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        if let videoUrl = info["UIImagePickerControllerMediaURL"] as? URL {
+            if let thumbnailImg = self.generateThumbnailImgForFileUrl(videoUrl) {
+                selectedImg = thumbnailImg
+                photoImg.image = thumbnailImg
+                self.videoUrl = videoUrl
+
+            }
+        }
+        
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             
             selectedImg = image
             photoImg.image = image
         }
         dismiss(animated: true, completion: nil)
+    }
+    
+    func generateThumbnailImgForFileUrl(_ fileUrl: URL) -> UIImage? {
+        let asset = AVAsset(url: fileUrl)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        do {
+            let thumbnailCGImage = try imageGenerator.copyCGImage(at: CMTimeMake(6, 3), actualTime: nil)
+            return UIImage(cgImage: thumbnailCGImage)
+        } catch let err {
+            print(err)
+        }
+        return nil
     }
     
     

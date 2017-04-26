@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol ProfileCollectionViewCellDelegate {
+    func goToDetailVC(postId: String)
+}
+
 class ProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImgView: UIImageView!
     
+    var delegate: ProfileCollectionViewCellDelegate?
     var post: Post? {
         didSet {
             updateView()
@@ -22,6 +27,15 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         if let photoUrlString = post?.photoUrl {
             let photoUrl = URL(string: photoUrlString)
             cellImgView.sd_setImage(with: photoUrl)
+        }
+        let tapGestureForCellImgView = UITapGestureRecognizer(target: self, action: #selector(self.cellImgViewPressed))
+        cellImgView.addGestureRecognizer(tapGestureForCellImgView)
+        cellImgView.isUserInteractionEnabled = true
+    }
+    
+    func cellImgViewPressed() {
+        if let id = post?.id {
+            delegate?.goToDetailVC(postId: id)
         }
     }
 }
