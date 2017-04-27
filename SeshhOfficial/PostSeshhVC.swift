@@ -21,10 +21,13 @@ class PostSeshhVC: UIViewController {
     
 
     var selectedImg: UIImage?
-    var videoUrl : URL?
+    var videoUrl: URL?
     var buddies: [String] = []
     
-    override func viewDidLoad() {
+    //NEW STUFF
+    var categorySelected: String?
+    
+    override func viewDidLoad() { //PHOTO/VIDEO PICKER GESTURE
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
@@ -34,7 +37,7 @@ class PostSeshhVC: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) { //DNI
         super.viewWillAppear(animated)
         
         handlePost()
@@ -42,7 +45,7 @@ class PostSeshhVC: UIViewController {
     
     // IMPROVING USER INTERACTION
     
-    func handlePost() {
+    func handlePost() { //DNI
         
         if selectedImg != nil {
             self.postBtn.isEnabled = true
@@ -56,22 +59,27 @@ class PostSeshhVC: UIViewController {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func clearCategorySelection() { // NEW STUFF
+        self.categorySelected = ""
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //KEYBOARD DISMIS
         view.endEditing(true)
         
     }
     // IMAGE PICKER
     
-    func handleSelectPhoto() {
+    func handleSelectPhoto() { //PHOTO
         
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.mediaTypes = ["public.image, public.movie"]
+        pickerController.mediaTypes = ["public.image", "public.movie"]
         present(pickerController, animated: true, completion: nil)
         
     }
     
-    @IBAction func clearPostBtnPressed(_ sender: Any) {
+    @IBAction func clearPostBtnPressed(_ sender: Any) { //DNI
         clearPost()
         handlePost()
     }
@@ -94,7 +102,7 @@ class PostSeshhVC: UIViewController {
     
     // CLEAR ALL CELLS IN POST - MAY NEED TO BE REMOVED
     
-    func clearPost() {
+    func clearPost() { //DNI
         self.titleTxtFld.text = ""
         self.descriptionTxtView.text = ""
         self.photoImg.image = UIImage(named: "placeholderImg")

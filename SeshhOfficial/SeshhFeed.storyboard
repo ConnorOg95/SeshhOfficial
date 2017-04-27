@@ -440,20 +440,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ev-MW-GQm">
-                                                    <rect key="frame" x="324" y="15" width="36" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="36" id="9pE-F3-Oi1"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="ALQ-IO-kPo"/>
-                                                        <constraint firstAttribute="height" constant="36" id="IjW-Rx-7yL"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="alv-3q-vS0"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="18"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-g2-mFj">
                                                     <rect key="frame" x="141" y="485" width="171" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
@@ -489,6 +475,18 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ev-MW-GQm">
+                                                    <rect key="frame" x="315" y="69" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="9pE-F3-Oi1"/>
+                                                        <constraint firstAttribute="height" constant="50" id="IjW-Rx-7yL"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vkB-eB-PaJ" firstAttribute="width" secondItem="C1T-Mj-LCE" secondAttribute="width" id="8ME-sk-f2p"/>
@@ -511,14 +509,14 @@
                                                 <constraint firstItem="C1T-Mj-LCE" firstAttribute="leading" secondItem="e9q-KL-Asp" secondAttribute="trailing" constant="20" id="Y6R-sr-6R9"/>
                                                 <constraint firstAttribute="trailing" secondItem="3h4-WF-ikB" secondAttribute="trailing" id="aEZ-IZ-LkL"/>
                                                 <constraint firstItem="C1T-Mj-LCE" firstAttribute="height" secondItem="e9q-KL-Asp" secondAttribute="height" id="dYg-l6-tkF"/>
-                                                <constraint firstItem="7Ev-MW-GQm" firstAttribute="top" secondItem="6Ie-dq-Glv" secondAttribute="top" constant="15" id="f0T-nl-MBA"/>
                                                 <constraint firstItem="GLL-v1-DzG" firstAttribute="top" secondItem="6Ie-dq-Glv" secondAttribute="top" constant="15" id="fqF-nk-2Jd"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ujq-hq-A90" secondAttribute="bottom" constant="15" id="ftc-9e-Co7"/>
+                                                <constraint firstItem="7Ev-MW-GQm" firstAttribute="top" secondItem="3h4-WF-ikB" secondAttribute="top" constant="10" id="hPF-uG-qLD"/>
                                                 <constraint firstItem="e9q-KL-Asp" firstAttribute="top" secondItem="92Z-V1-raJ" secondAttribute="bottom" constant="15" id="jpS-Nr-RRT"/>
                                                 <constraint firstItem="92Z-V1-raJ" firstAttribute="top" secondItem="XgW-m2-Kzf" secondAttribute="bottom" constant="15" id="mDf-ak-GDR"/>
+                                                <constraint firstItem="7Ev-MW-GQm" firstAttribute="trailing" secondItem="3h4-WF-ikB" secondAttribute="trailing" constant="-10" id="mV2-we-uah"/>
                                                 <constraint firstItem="e9q-KL-Asp" firstAttribute="leading" secondItem="6Ie-dq-Glv" secondAttribute="leading" constant="15" id="n35-8J-Lnj"/>
                                                 <constraint firstAttribute="trailing" secondItem="ofF-Xy-Aez" secondAttribute="trailing" id="o3w-N8-4BU"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Ev-MW-GQm" secondAttribute="trailing" constant="15" id="qQP-Mi-hUJ"/>
                                                 <constraint firstItem="3h4-WF-ikB" firstAttribute="leading" secondItem="6Ie-dq-Glv" secondAttribute="leading" id="rEo-IT-ofU"/>
                                                 <constraint firstItem="aBO-td-Wis" firstAttribute="bottom" secondItem="3h4-WF-ikB" secondAttribute="bottom" constant="-10" id="rdT-UK-MZs"/>
                                                 <constraint firstItem="C1T-Mj-LCE" firstAttribute="centerY" secondItem="e9q-KL-Asp" secondAttribute="centerY" id="u84-qS-HO5"/>

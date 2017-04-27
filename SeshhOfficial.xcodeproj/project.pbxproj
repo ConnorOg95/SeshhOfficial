@@ -54,6 +54,8 @@
 		CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */; };
 		CEF8B24D1EAFEC2500236D2A /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */; };
 		CEF8B24F1EB01B5200236D2A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B24E1EB01B5200236D2A /* DetailVC.swift */; };
+		CEF8B2511EB1901400236D2A /* PostSeshh2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2501EB1901400236D2A /* PostSeshh2VC.swift */; };
+		CEF8B2531EB1903300236D2A /* PostSeshh3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2521EB1903300236D2A /* PostSeshh3VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
 		CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		CEF8B24E1EB01B5200236D2A /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		CEF8B2501EB1901400236D2A /* PostSeshh2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSeshh2VC.swift; sourceTree = "<group>"; };
+		CEF8B2521EB1903300236D2A /* PostSeshh3VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSeshh3VC.swift; sourceTree = "<group>"; };
 		E811D6000DCB0CBC61B5C842 /* Pods_SeshhOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeshhOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,8 @@
 				CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */,
 				CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */,
 				CEF8B24E1EB01B5200236D2A /* DetailVC.swift */,
+				CEF8B2501EB1901400236D2A /* PostSeshh2VC.swift */,
+				CEF8B2521EB1903300236D2A /* PostSeshh3VC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 				CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */,
 				CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
+				CEF8B2531EB1903300236D2A /* PostSeshh3VC.swift in Sources */,
 				CEF8B24F1EB01B5200236D2A /* DetailVC.swift in Sources */,
 				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
@@ -413,6 +420,7 @@
 				CE15E2CE1E99BB6500D2AEE0 /* Comment.swift in Sources */,
 				CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
+				CEF8B2511EB1901400236D2A /* PostSeshh2VC.swift in Sources */,
 				CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */,
 				CE15E2CC1E9895A200D2AEE0 /* UserApi.swift in Sources */,
 			);
