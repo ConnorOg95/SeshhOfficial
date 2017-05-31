@@ -13,6 +13,7 @@ class SeshhFeedVC: UIViewController {
 
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var sideMenuBtn: UIBarButtonItem!
     
     var posts = [Post]()
     var users = [User]()
@@ -20,11 +21,20 @@ class SeshhFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // revealViewController().rightViewRevealWidth = 250
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(SWRevealViewController.rightRevealToggle(_:))
         postTableView.estimatedRowHeight = 532
         postTableView.rowHeight = UITableViewAutomaticDimension
         postTableView.dataSource = self
         loadPosts()
         
+    }
+    
+    
+    @IBAction func sideBarBtnPressed(_ sender: Any) {
+        sideMenuBtn.target = revealViewController()
+        sideMenuBtn.action = #selector(SWRevealViewController.rightRevealToggle(_:))
     }
     
     

@@ -41,6 +41,18 @@
 		CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */; };
 		CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */; };
 		CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */; };
+		CED63E011EB92E6B0087A44E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63DFF1EB92E6B0087A44E /* SWRevealViewController.m */; };
+		CED63E031EBCAF650087A44E /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E021EBCAF650087A44E /* SideMenuTVC.swift */; };
+		CED63E051EBCAFDF0087A44E /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E041EBCAFDF0087A44E /* SideMenuTableViewCell.swift */; };
+		CED63E071EC56E820087A44E /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E061EC56E820087A44E /* PinAnnotation.swift */; };
+		CED63E091EC66B0F0087A44E /* LocationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E081EC66B0F0087A44E /* LocationApi.swift */; };
+		CED63E1B1EC675090087A44E /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63E121EC675090087A44E /* GeoFire.m */; };
+		CED63E1C1EC675090087A44E /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63E141EC675090087A44E /* GFBase32Utils.m */; };
+		CED63E1D1EC675090087A44E /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63E161EC675090087A44E /* GFGeoHash.m */; };
+		CED63E1E1EC675090087A44E /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63E181EC675090087A44E /* GFGeoHashQuery.m */; };
+		CED63E1F1EC675090087A44E /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63E1A1EC675090087A44E /* GFQuery.m */; };
+		CED63E231EC6A3430087A44E /* SeshhAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E221EC6A3430087A44E /* SeshhAnnotation.swift */; };
+		CED63E251EDF6DCD0087A44E /* HashTagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E241EDF6DCD0087A44E /* HashTagApi.swift */; };
 		CEF248111E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */; };
 		CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */; };
 		CEF248151E9DC726007BEAB0 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */; };
@@ -98,6 +110,29 @@
 		CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
 		CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
+		CED63DFF1EB92E6B0087A44E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		CED63E001EB92E6B0087A44E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CED63E021EBCAF650087A44E /* SideMenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
+		CED63E041EBCAFDF0087A44E /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		CED63E061EC56E820087A44E /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
+		CED63E081EC66B0F0087A44E /* LocationApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationApi.swift; sourceTree = "<group>"; };
+		CED63E0B1EC675090087A44E /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		CED63E0C1EC675090087A44E /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		CED63E0D1EC675090087A44E /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		CED63E0E1EC675090087A44E /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		CED63E0F1EC675090087A44E /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		CED63E111EC675090087A44E /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		CED63E121EC675090087A44E /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		CED63E131EC675090087A44E /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		CED63E141EC675090087A44E /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		CED63E151EC675090087A44E /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		CED63E161EC675090087A44E /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		CED63E171EC675090087A44E /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		CED63E181EC675090087A44E /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		CED63E191EC675090087A44E /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		CED63E1A1EC675090087A44E /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		CED63E221EC6A3430087A44E /* SeshhAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeshhAnnotation.swift; sourceTree = "<group>"; };
+		CED63E241EDF6DCD0087A44E /* HashTagApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTagApi.swift; sourceTree = "<group>"; };
 		CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 		CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostApi.swift; sourceTree = "<group>"; };
 		CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +185,7 @@
 			children = (
 				CE0FC01B1E67AD150044C8E1 /* SeshhOfficial */,
 				CE0FC01A1E67AD150044C8E1 /* Products */,
+				CED63E211EC6754B0087A44E /* Geofire */,
 				79DFE256A72815FB4006331F /* Pods */,
 				C90E6BDFE759DC2F9D1E6399 /* Frameworks */,
 			);
@@ -178,9 +214,12 @@
 				CE0FC0281E67AD150044C8E1 /* Info.plist */,
 				CE0FC0B11E6E96590044C8E1 /* ProgressHUD.bundle */,
 				CE0FC0B21E6E96590044C8E1 /* ProgressHUD.h */,
+				CED63DFF1EB92E6B0087A44E /* SWRevealViewController.m */,
+				CED63E001EB92E6B0087A44E /* SWRevealViewController.h */,
 				CE0FC0B31E6E96590044C8E1 /* ProgressHUD.m */,
 				CE0FC0B01E6E96580044C8E1 /* SeshhOfficial-Bridging-Header.h */,
 				CE15E2C91E98931100D2AEE0 /* PostApi.swift */,
+				CED63E081EC66B0F0087A44E /* LocationApi.swift */,
 				CE15E2CB1E9895A200D2AEE0 /* UserApi.swift */,
 				CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */,
 				CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */,
@@ -189,6 +228,7 @@
 				CEF248161E9DDB0D007BEAB0 /* HelpService.swift */,
 				CEF8B2421EA39CFB00236D2A /* FollowApi.swift */,
 				CEF8B2441EA7EB6D00236D2A /* FeedApi.swift */,
+				CED63E241EDF6DCD0087A44E /* HashTagApi.swift */,
 			);
 			path = SeshhOfficial;
 			sourceTree = "<group>";
@@ -202,6 +242,8 @@
 				CE0FC0321E67AFD90044C8E1 /* SignUpVC.swift */,
 				CE0FC0361E67B0100044C8E1 /* SeshhMapVC.swift */,
 				CE0FC0381E67B0570044C8E1 /* PostSeshhVC.swift */,
+				CEF8B2501EB1901400236D2A /* PostSeshh2VC.swift */,
+				CEF8B2521EB1903300236D2A /* PostSeshh3VC.swift */,
 				CE0FC03A1E67B0C20044C8E1 /* ProfileVC.swift */,
 				CE0FC03C1E67B0D10044C8E1 /* ActivityVC.swift */,
 				CE15E2C31E89B33900D2AEE0 /* CommentVC.swift */,
@@ -210,8 +252,7 @@
 				CEF8B24A1EA95BEA00236D2A /* ProfileUserVC.swift */,
 				CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */,
 				CEF8B24E1EB01B5200236D2A /* DetailVC.swift */,
-				CEF8B2501EB1901400236D2A /* PostSeshh2VC.swift */,
-				CEF8B2521EB1903300236D2A /* PostSeshh3VC.swift */,
+				CED63E021EBCAF650087A44E /* SideMenuTVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +278,8 @@
 				CE0FC0FE1E75F8BE0044C8E1 /* Post.swift */,
 				CE15E2BD1E78BBB800D2AEE0 /* User.swift */,
 				CE15E2CD1E99BB6500D2AEE0 /* Comment.swift */,
+				CED63E061EC56E820087A44E /* PinAnnotation.swift */,
+				CED63E221EC6A3430087A44E /* SeshhAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,8 +292,47 @@
 				CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */,
 				CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */,
 				CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */,
+				CED63E041EBCAFDF0087A44E /* SideMenuTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		CED63E0A1EC675090087A44E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CED63E0B1EC675090087A44E /* GeoFire.h */,
+				CED63E0C1EC675090087A44E /* GFCircleQuery.h */,
+				CED63E0D1EC675090087A44E /* GFQuery.h */,
+				CED63E0E1EC675090087A44E /* GFRegionQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CED63E101EC675090087A44E /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CED63E111EC675090087A44E /* GeoFire+Private.h */,
+				CED63E121EC675090087A44E /* GeoFire.m */,
+				CED63E131EC675090087A44E /* GFBase32Utils.h */,
+				CED63E141EC675090087A44E /* GFBase32Utils.m */,
+				CED63E151EC675090087A44E /* GFGeoHash.h */,
+				CED63E161EC675090087A44E /* GFGeoHash.m */,
+				CED63E171EC675090087A44E /* GFGeoHashQuery.h */,
+				CED63E181EC675090087A44E /* GFGeoHashQuery.m */,
+				CED63E191EC675090087A44E /* GFQuery+Private.h */,
+				CED63E1A1EC675090087A44E /* GFQuery.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CED63E211EC6754B0087A44E /* Geofire */ = {
+			isa = PBXGroup;
+			children = (
+				CED63E0A1EC675090087A44E /* API */,
+				CED63E0F1EC675090087A44E /* GeoFire-Prefix.pch */,
+				CED63E101EC675090087A44E /* Implementation */,
+			);
+			name = Geofire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,12 +469,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */,
+				CED63E011EB92E6B0087A44E /* SWRevealViewController.m in Sources */,
 				CEF248111E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift in Sources */,
+				CED63E091EC66B0F0087A44E /* LocationApi.swift in Sources */,
 				CE0FC0371E67B0100044C8E1 /* SeshhMapVC.swift in Sources */,
+				CED63E1F1EC675090087A44E /* GFQuery.m in Sources */,
 				CEF8B2491EA94DDB00236D2A /* DiscoverVC.swift in Sources */,
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
 				CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */,
 				CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */,
+				CED63E031EBCAF650087A44E /* SideMenuTVC.swift in Sources */,
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
 				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
@@ -401,12 +487,14 @@
 				CE15E2C41E89B33900D2AEE0 /* CommentVC.swift in Sources */,
 				CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */,
 				CE15E2BE1E78BBB800D2AEE0 /* User.swift in Sources */,
+				CED63E071EC56E820087A44E /* PinAnnotation.swift in Sources */,
 				CE0FC03B1E67B0C20044C8E1 /* ProfileVC.swift in Sources */,
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
 				CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */,
 				CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
 				CEF8B2531EB1903300236D2A /* PostSeshh3VC.swift in Sources */,
+				CED63E1E1EC675090087A44E /* GFGeoHashQuery.m in Sources */,
 				CEF8B24F1EB01B5200236D2A /* DetailVC.swift in Sources */,
 				CE15E2C61E89B4AB00D2AEE0 /* CommentTableViewCell.swift in Sources */,
 				CE0FC0351E67B0010044C8E1 /* SeshhFeedVC.swift in Sources */,
@@ -415,11 +503,17 @@
 				CE0FC0A91E6E53850044C8E1 /* Config.swift in Sources */,
 				CE0FC0331E67AFD90044C8E1 /* SignUpVC.swift in Sources */,
 				CEF248151E9DC726007BEAB0 /* ProfileCollectionViewCell.swift in Sources */,
+				CED63E1B1EC675090087A44E /* GeoFire.m in Sources */,
 				CEF248171E9DDB0D007BEAB0 /* HelpService.swift in Sources */,
 				CE15E2CA1E98931100D2AEE0 /* PostApi.swift in Sources */,
+				CED63E231EC6A3430087A44E /* SeshhAnnotation.swift in Sources */,
+				CED63E1C1EC675090087A44E /* GFBase32Utils.m in Sources */,
+				CED63E1D1EC675090087A44E /* GFGeoHash.m in Sources */,
 				CE15E2CE1E99BB6500D2AEE0 /* Comment.swift in Sources */,
 				CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */,
+				CED63E051EBCAFDF0087A44E /* SideMenuTableViewCell.swift in Sources */,
 				CE0FC01D1E67AD150044C8E1 /* AppDelegate.swift in Sources */,
+				CED63E251EDF6DCD0087A44E /* HashTagApi.swift in Sources */,
 				CEF8B2511EB1901400236D2A /* PostSeshh2VC.swift in Sources */,
 				CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */,
 				CE15E2CC1E9895A200D2AEE0 /* UserApi.swift in Sources */,

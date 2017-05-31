@@ -27,12 +27,6 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var followerCountLbl: UILabel!
     @IBOutlet weak var followBtn: UIButton!
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        nameLbl.text = ""
-//        profileImgView.image = UIImage(named: "placeholderImg")
-//    }
-    
     var delegate2: HeaderProfileCollectionReusableViewDelegateSwitchSettingTVC?
     var delegate: HeaderProfileCollectionReusableViewDelegate?
     var user: User? {
@@ -44,6 +38,8 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         clearItems()
+        profileImgView.layer.borderWidth = 2
+        profileImgView.layer.borderColor = UIColor(red: 60/255, green: 204/255, blue: 252/255, alpha: 1).cgColor
     }
     
     // UPDATING THE PROFILE HEADER VIEW
@@ -80,6 +76,7 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
         self.postCountLbl.text = ""
         self.followingCountLbl.text = ""
         self.followerCountLbl.text = ""
+        profileImgView.image = UIImage(named: "placeholderImg")
     }
     
     func goToSettingsTVC() {

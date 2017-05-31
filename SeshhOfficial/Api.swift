@@ -17,5 +17,7 @@ struct Api {
     static var myPosts = MyPostApi()
     static var Follow = FollowApi()
     static var feed = FeedApi()
-    
+    static var location = LocationApi()
+    static var hashTag = HashTagApi()
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Who's On The Seshh?-->
+        <!--WHO'S ON THE SESHH?-->
         <scene sceneID="SHx-gS-1q4">
             <objects>
                 <viewController id="3VA-Cd-cE6" customClass="SeshhMapVC" customModule="SeshhOfficial" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,22 +20,36 @@
                     <view key="view" contentMode="scaleToFill" id="h9V-XS-ZYQ">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bXt-s3-PFU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bXt-s3-PFU" firstAttribute="top" secondItem="Q9I-pa-ZXd" secondAttribute="bottom" id="8SR-eq-Bkw"/>
+                            <constraint firstAttribute="trailing" secondItem="bXt-s3-PFU" secondAttribute="trailing" id="YcI-j3-rfz"/>
+                            <constraint firstItem="oIi-b8-24X" firstAttribute="top" secondItem="bXt-s3-PFU" secondAttribute="bottom" id="Zvk-Ke-U1P"/>
+                            <constraint firstItem="bXt-s3-PFU" firstAttribute="leading" secondItem="h9V-XS-ZYQ" secondAttribute="leading" id="nZi-Mt-neH"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Who's On The Seshh?" id="Inc-Rm-Ma3"/>
+                    <navigationItem key="navigationItem" title="WHO'S ON THE SESHH?" id="Inc-Rm-Ma3"/>
+                    <connections>
+                        <outlet property="mapView" destination="bXt-s3-PFU" id="8A5-G7-9g6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axu-sx-mo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="1717"/>
+            <point key="canvasLocation" x="1548" y="1716.7916041979013"/>
         </scene>
-        <!--Map-->
+        <!--MAP-->
         <scene sceneID="Oss-8a-4Jw">
             <objects>
                 <navigationController storyboardIdentifier="NavigationSeshhMap" automaticallyAdjustsScrollViewInsets="NO" id="cfT-Uu-qh4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="Search" selectedImage="Search_Selected" id="u8S-C5-nJu"/>
+                    <tabBarItem key="tabBarItem" title="MAP" image="Map" selectedImage="Map" id="u8S-C5-nJu"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GLO-sr-CDG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="GLO-sr-CDG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.23529411759999999" green="0.80000000000000004" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +68,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Search" width="23" height="22"/>
-        <image name="Search_Selected" width="23" height="22"/>
+        <image name="Map" width="35" height="35"/>
     </resources>
 </document>
