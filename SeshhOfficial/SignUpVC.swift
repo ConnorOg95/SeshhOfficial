@@ -17,6 +17,8 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var confirmedPasswordTxtFld: UITextField!
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var signUpBtn: UIButton!
+    @IBOutlet weak var nameTxtFld: UITextField!
+    @IBOutlet weak var lastNameTxtFld: UITextField!
     
     var selectedImg: UIImage?
     
@@ -43,6 +45,15 @@ class SignUpVC: UIViewController {
         bottomLayerEmail.backgroundColor = UIColor.white.cgColor
         emailTxtFld.layer.addSublayer(bottomLayerEmail)
         
+        confirmEmailTxtFld.backgroundColor = UIColor.clear
+        confirmEmailTxtFld.tintColor = UIColor.white
+        confirmEmailTxtFld.textColor = UIColor.white
+        confirmEmailTxtFld.attributedPlaceholder = NSAttributedString(string: confirmEmailTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerConfirmEmail = CALayer()
+        bottomLayerConfirmEmail.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerConfirmEmail.backgroundColor = UIColor.white.cgColor
+        confirmEmailTxtFld.layer.addSublayer(bottomLayerConfirmEmail)
+        
         passwordTxtFld.backgroundColor = UIColor.clear
         passwordTxtFld.tintColor = UIColor.white
         passwordTxtFld.textColor = UIColor.white
@@ -51,6 +62,33 @@ class SignUpVC: UIViewController {
         bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
         bottomLayerPassword.backgroundColor = UIColor.white.cgColor
         passwordTxtFld.layer.addSublayer(bottomLayerPassword)
+        
+        confirmedPasswordTxtFld.backgroundColor = UIColor.clear
+        confirmedPasswordTxtFld.tintColor = UIColor.white
+        confirmedPasswordTxtFld.textColor = UIColor.white
+        confirmedPasswordTxtFld.attributedPlaceholder = NSAttributedString(string: confirmedPasswordTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerConfirmPassword = CALayer()
+        bottomLayerConfirmPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerConfirmPassword.backgroundColor = UIColor.white.cgColor
+        confirmedPasswordTxtFld.layer.addSublayer(bottomLayerConfirmPassword)
+        
+        nameTxtFld.backgroundColor = UIColor.clear
+        nameTxtFld.tintColor = UIColor.white
+        nameTxtFld.textColor = UIColor.white
+        nameTxtFld.attributedPlaceholder = NSAttributedString(string: nameTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerFirstName = CALayer()
+        bottomLayerFirstName.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerFirstName.backgroundColor = UIColor.white.cgColor
+        nameTxtFld.layer.addSublayer(bottomLayerFirstName)
+        
+        lastNameTxtFld.backgroundColor = UIColor.clear
+        lastNameTxtFld.tintColor = UIColor.white
+        lastNameTxtFld.textColor = UIColor.white
+        lastNameTxtFld.attributedPlaceholder = NSAttributedString(string: lastNameTxtFld.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(white: 1.0, alpha: 0.6)])
+        let bottomLayerLastName = CALayer()
+        bottomLayerLastName.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
+        bottomLayerLastName.backgroundColor = UIColor.white.cgColor
+        lastNameTxtFld.layer.addSublayer(bottomLayerLastName)
         
         profileImgView.layer.cornerRadius = 50
         profileImgView.clipsToBounds = true

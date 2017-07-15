@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KILabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SeshhOfficial.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>386D49C14C80749549D64E0E35832AF0</key>
+		<key>8D52FB40E5C185C2DAD501DC7664CD52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1C75372CEE35643AB48CA6828CA9A43</key>
+		<key>A5D82373166B88054A7C35508BCD2838</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4BB7234B1F7C12529E928A427D8BCE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

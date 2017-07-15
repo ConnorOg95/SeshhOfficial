@@ -19,5 +19,7 @@ struct Api {
     static var feed = FeedApi()
     static var location = LocationApi()
     static var hashTag = HashTagApi()
+    static var notification = NotificationApi()
+
 
 }

@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SeshhOfficial/PostTableViewCell.swift"
-            timestampString = "514943394.168253"
+            timestampString = "519935140.994573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "likeImgViewPressed()"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "nameLblPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SeshhOfficial/PostTableViewCell.swift"
-            timestampString = "514943394.168253"
+            timestampString = "519935140.994573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "updateView()"
             landmarkType = "7">
             <Locations>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SeshhOfficial/HelpService.swift"
-            timestampString = "516323119.442939"
+            timestampString = "519940845.232163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "uploadDataToServer(data:videoUrl:ratio:title:description:startDate:endDate:category:location:onSuccess:)"
             landmarkType = "7">
          </BreakpointContent>

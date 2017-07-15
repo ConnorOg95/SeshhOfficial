@@ -59,6 +59,11 @@ class DetailVC: UIViewController {
             let userId = sender as! String
             profileVC.userId = userId
         }
+        if segue.identifier == "DetailToHashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagVC
+            let tag = sender as! String
+            hashTagVC.tag = tag
+        }
     }
 }
 
@@ -84,5 +89,8 @@ extension DetailVC: PostTableViewCellDelegate {
     }
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "DetailToProfileUserSegue", sender: userId)
+    }
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "DetailToHashTagSegue", sender: tag)
     }
 }

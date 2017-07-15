@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import KILabel
+
 protocol CommentTableViewCellDelegate {
     func goToProfileUserVC(userId: String)
+    func goToHashTag(tag: String)
+
 }
 
 class CommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImgView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var commentLbl: UILabel!
+    @IBOutlet weak var commentLbl: KILabel!
     
     var delegate: CommentTableViewCellDelegate?
     var comment: Comment? {
@@ -32,6 +36,18 @@ class CommentTableViewCell: UITableViewCell {
     
     func updateView() {
         commentLbl.text = comment?.commentTxt
+        
+        commentLbl.hashtagLinkTapHandler = { label, string, range in
+            let tag = String(string.characters.dropFirst())
+            print(tag)
+            self.delegate?.goToHashTag(tag: tag)
+        }
+        commentLbl.userHandleLinkTapHandler = { label, string, range in
+            let mention = String(string.characters.dropFirst())
+            Api.user.observeUserByUsername(username: mention.lowercased(), completion: { (user) in
+                self.delegate?.goToProfileUserVC(userId: user.id!)
+            })
+        }
     }
     
     func setupUserInfo() {

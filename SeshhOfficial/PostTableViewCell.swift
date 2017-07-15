@@ -8,10 +8,12 @@
 
 import UIKit
 import AVFoundation
+import KILabel
 
 protocol PostTableViewCellDelegate {
     func goToCommentVC(postId: String)
     func goToProfileUserVC(userId: String)
+    func goToHashTag(tag: String)
 }
 
 class PostTableViewCell: UITableViewCell {
@@ -22,7 +24,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryImgView: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var postPhotoImgView: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var titleLbl: KILabel!
     @IBOutlet weak var likeImgView: UIImageView!
     @IBOutlet weak var commentImgView: UIImageView!
     @IBOutlet weak var shareImgView: UIImageView!
@@ -31,6 +33,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var photoHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var volumeBtn: UIButton!
+    @IBOutlet weak var timeLbl: UILabel!
     
     var delegate: PostTableViewCellDelegate?
     var player: AVPlayer?
@@ -55,6 +58,20 @@ class PostTableViewCell: UITableViewCell {
     func updateView() {
         
         titleLbl.text = post?.title
+        
+        titleLbl.hashtagLinkTapHandler = { label, string, range in
+            let tag = String(string.characters.dropFirst())
+            self.delegate?.goToHashTag(tag: tag)
+        }
+        
+        titleLbl.userHandleLinkTapHandler = { label, string, range in
+            let mention = String(string.characters.dropFirst())
+            print(mention)
+            Api.user.observeUserByUsername(username: mention.lowercased(), completion: { (user) in
+                self.delegate?.goToProfileUserVC(userId: user.id!)
+            })
+        }
+        
         if let ratio = post?.ratio {
             photoHeightConstraint.constant = UIScreen.main.bounds.width / ratio
             layoutIfNeeded()
@@ -74,6 +91,36 @@ class PostTableViewCell: UITableViewCell {
             self.volumeView.layer.zPosition = 1
             player?.play()
             player?.isMuted = isMuted
+        }
+        
+        if let timestamp = post?.timestamp {
+            print(timestamp)
+            let timestampDate = Date(timeIntervalSince1970: Double(timestamp))
+            let now = Date()
+            let components = Set<Calendar.Component>([.second, .minute, .hour, .day, .weekOfMonth])
+            let diff = Calendar.current.dateComponents(components, from: timestampDate, to: now)
+            
+            var timeText = ""
+            if diff.second! <= 0 {
+                timeText = "Now"
+            }
+            if diff.second! > 0 && diff.minute == 0 {
+                timeText = (diff.second == 1) ? "\(diff.second!) second ago" : "\(diff.second!) seconds ago"
+            }
+            if diff.minute! > 0 && diff.hour == 0 {
+                timeText = (diff.minute == 1) ? "\(diff.minute!) minute ago" : "\(diff.minute!) minutes ago"
+            }
+            if diff.hour! > 0 && diff.day == 0 {
+                timeText = (diff.hour == 1) ? "\(diff.hour!) hour ago" : "\(diff.hour!) hours ago"
+            }
+            if diff.day! > 0 && diff.weekOfMonth == 0 {
+                timeText = (diff.day == 1) ? "\(diff.day!) day ago" : "\(diff.day!) days ago"
+            }
+            if diff.weekOfMonth! > 0 {
+                timeText = (diff.weekOfMonth == 1) ? "\(diff.weekOfMonth!) week ago" : "\(diff.weekOfMonth!) weeks ago"
+
+            }
+            timeLbl.text = timeText
         }
         
         self.updateLike(post: self.post!)
@@ -146,6 +193,19 @@ class PostTableViewCell: UITableViewCell {
             self.post?.likes = post.likes
             self.post?.isLiked = post.isLiked
             self.post?.likeCount = post.likeCount
+            
+            if post.uid != Api.user.CURRENT_USER?.uid {
+                let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
+                
+                if post.isLiked! {
+                    let newNotificationReference = Api.notification.REF_NOTIFICATION.child(post.uid!).child("\(post.id!)-\(Api.user.CURRENT_USER!.uid)")
+                    newNotificationReference.setValue(["from": Api.user.CURRENT_USER!.uid, "objectId": post.id!, "type": "like", "timestamp": timestamp])
+                } else {
+                    let newNotificationReference = Api.notification.REF_NOTIFICATION.child(post.uid!).child("\(post.id!)-\(Api.user.CURRENT_USER!.uid)")
+                    newNotificationReference.removeValue()
+                }
+                
+            }
         }) { (errorMessage) in
             ProgressHUD.showError(errorMessage)
 //        incrementLikes(forRef: postRef)

@@ -25,6 +25,11 @@ class FollowApi  {
         })
         REF_FOLLOWERS.child(id).child(Api.user.CURRENT_USER!.uid).setValue(true)
         REF_FOLLOWING.child(Api.user.CURRENT_USER!.uid).child(id).setValue(true)
+        
+        let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
+        
+        let newNotificationReference = Api.notification.REF_NOTIFICATION.child(id).child("\(id)-\(Api.user.CURRENT_USER!.uid)")
+        newNotificationReference.setValue(["from": Api.user.CURRENT_USER!.uid, "objectId": Api.user.CURRENT_USER!.uid, "type": "follow", "timestamp": timestamp])
     }
     
     func unFollowAction(withUser id: String) {
@@ -40,6 +45,9 @@ class FollowApi  {
         
         REF_FOLLOWERS.child(id).child(Api.user.CURRENT_USER!.uid).setValue(NSNull())
         REF_FOLLOWING.child(Api.user.CURRENT_USER!.uid).child(id).setValue(NSNull())
+        
+        let newNotificationReference = Api.notification.REF_NOTIFICATION.child(id).child("\(id)-\(Api.user.CURRENT_USER!.uid)")
+        newNotificationReference.setValue(NSNull())
     }
     
     func isFollowing(userId: String, completed: @escaping (Bool) -> Void) {

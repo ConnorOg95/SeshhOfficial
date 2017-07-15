@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uQO-Jf-hDk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uQO-Jf-hDk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -241,6 +241,8 @@
                         <outlet property="confirmEmailTxtFld" destination="BO6-ze-DbG" id="HFJ-qt-JyR"/>
                         <outlet property="confirmedPasswordTxtFld" destination="2cj-3s-DC7" id="GRY-ix-g3k"/>
                         <outlet property="emailTxtFld" destination="gzi-CW-fTN" id="Ukc-Cc-nwT"/>
+                        <outlet property="lastNameTxtFld" destination="8Ph-yM-C45" id="NU9-nR-5bB"/>
+                        <outlet property="nameTxtFld" destination="PHj-Ym-rIZ" id="hov-8D-u6I"/>
                         <outlet property="passwordTxtFld" destination="iQ9-Ie-kB5" id="Oye-wm-leq"/>
                         <outlet property="profileImgView" destination="8yq-cG-ezq" id="WXD-X0-tZw"/>
                         <outlet property="signUpBtn" destination="fo8-zs-kyJ" id="npA-4X-n4o"/>
@@ -266,6 +268,6 @@
         <image name="seshhlogo350frcropped" width="247" height="87"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o6e-aK-ypN"/>
+        <segue reference="fxx-pR-81k"/>
     </inferredMetricsTieBreakers>
 </document>

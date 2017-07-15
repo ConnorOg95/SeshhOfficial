@@ -29,6 +29,14 @@ class SeshhFeedVC: UIViewController {
         postTableView.dataSource = self
         loadPosts()
         
+//        AuthService.logout(onSuccess: {
+//            let storyboard = UIStoryboard(name: "Start", bundle: nil)
+//            let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
+//            self.present(signInVC, animated: true, completion: nil)
+//        }) { (errorMessage) in
+//            ProgressHUD.showError(errorMessage)
+//        }
+        
     }
     
     
@@ -48,7 +56,7 @@ class SeshhFeedVC: UIViewController {
             }
             
             self.fetchUser(uid: postUid, completed: {
-                self.posts.append(post)
+                self.posts.insert(post, at: 0)
                 self.postTableView.reloadData()
             })
         }
@@ -65,7 +73,7 @@ class SeshhFeedVC: UIViewController {
         
         Api.user.observeUser(withId: uid, completion: {
             user in
-            self.users.append(user)
+            self.users.insert(user, at: 0)
             completed()
         })
         
@@ -81,6 +89,11 @@ class SeshhFeedVC: UIViewController {
             let profileVC = segue.destination as! ProfileUserVC
             let userId = sender as! String
             profileVC.userId = userId
+        }
+        if segue.identifier == "HomeToHashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagVC
+            let tag = sender as! String
+            hashTagVC.tag = tag
         }
     }
     
@@ -112,5 +125,8 @@ extension SeshhFeedVC: PostTableViewCellDelegate {
     }
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "HomeToProfileSegue", sender: userId)
+    }
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "HomeToHashTagSegue", sender: tag)
     }
 }

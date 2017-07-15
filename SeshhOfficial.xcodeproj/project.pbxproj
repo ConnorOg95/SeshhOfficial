@@ -41,6 +41,7 @@
 		CE15E2D01E99D6AD00D2AEE0 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */; };
 		CE15E2D21E99D73900D2AEE0 /* CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */; };
 		CE15E2D41E99DB4700D2AEE0 /* Post_CommentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */; };
+		CE6DA01C1EE49DD800704532 /* HashTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DA01B1EE49DD800704532 /* HashTagVC.swift */; };
 		CED63E011EB92E6B0087A44E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED63DFF1EB92E6B0087A44E /* SWRevealViewController.m */; };
 		CED63E031EBCAF650087A44E /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E021EBCAF650087A44E /* SideMenuTVC.swift */; };
 		CED63E051EBCAFDF0087A44E /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED63E041EBCAFDF0087A44E /* SideMenuTableViewCell.swift */; };
@@ -57,6 +58,9 @@
 		CEF248131E9D9F4D007BEAB0 /* MyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */; };
 		CEF248151E9DC726007BEAB0 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */; };
 		CEF248171E9DDB0D007BEAB0 /* HelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248161E9DDB0D007BEAB0 /* HelpService.swift */; };
+		CEF4B6EE1EFD924100709B74 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4B6ED1EFD924100709B74 /* ActivityTableViewCell.swift */; };
+		CEF4B6F01EFDA1AE00709B74 /* NotificationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4B6EF1EFDA1AE00709B74 /* NotificationApi.swift */; };
+		CEF4B6F21EFDA3B400709B74 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4B6F11EFDA3B400709B74 /* Notification.swift */; };
 		CEF8B23F1EA2AEE800236D2A /* BuddiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */; };
 		CEF8B2411EA2AF0A00236D2A /* BuddiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */; };
 		CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8B2421EA39CFB00236D2A /* FollowApi.swift */; };
@@ -110,6 +114,7 @@
 		CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentApi.swift; sourceTree = "<group>"; };
 		CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post_CommentApi.swift; sourceTree = "<group>"; };
+		CE6DA01B1EE49DD800704532 /* HashTagVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTagVC.swift; sourceTree = "<group>"; };
 		CED63DFF1EB92E6B0087A44E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CED63E001EB92E6B0087A44E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CED63E021EBCAF650087A44E /* SideMenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
@@ -137,6 +142,9 @@
 		CEF248121E9D9F4D007BEAB0 /* MyPostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostApi.swift; sourceTree = "<group>"; };
 		CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEF248161E9DDB0D007BEAB0 /* HelpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpService.swift; sourceTree = "<group>"; };
+		CEF4B6ED1EFD924100709B74 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		CEF4B6EF1EFDA1AE00709B74 /* NotificationApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationApi.swift; sourceTree = "<group>"; };
+		CEF4B6F11EFDA3B400709B74 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CEF8B23E1EA2AEE800236D2A /* BuddiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesVC.swift; sourceTree = "<group>"; };
 		CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewCell.swift; sourceTree = "<group>"; };
 		CEF8B2421EA39CFB00236D2A /* FollowApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 				CE15E2C91E98931100D2AEE0 /* PostApi.swift */,
 				CED63E081EC66B0F0087A44E /* LocationApi.swift */,
 				CE15E2CB1E9895A200D2AEE0 /* UserApi.swift */,
+				CEF4B6EF1EFDA1AE00709B74 /* NotificationApi.swift */,
 				CE15E2CF1E99D6AD00D2AEE0 /* Api.swift */,
 				CE15E2D11E99D73900D2AEE0 /* CommentApi.swift */,
 				CE15E2D31E99DB4700D2AEE0 /* Post_CommentApi.swift */,
@@ -253,6 +262,7 @@
 				CEF8B24C1EAFEC2500236D2A /* SettingsTVC.swift */,
 				CEF8B24E1EB01B5200236D2A /* DetailVC.swift */,
 				CED63E021EBCAF650087A44E /* SideMenuTVC.swift */,
+				CE6DA01B1EE49DD800704532 /* HashTagVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 				CE15E2CD1E99BB6500D2AEE0 /* Comment.swift */,
 				CED63E061EC56E820087A44E /* PinAnnotation.swift */,
 				CED63E221EC6A3430087A44E /* SeshhAnnotation.swift */,
+				CEF4B6F11EFDA3B400709B74 /* Notification.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -290,6 +301,7 @@
 				CE0FC1021E75F9880044C8E1 /* PostTableViewCell.swift */,
 				CE15E2C51E89B4AB00D2AEE0 /* CommentTableViewCell.swift */,
 				CEF248101E9D87DE007BEAB0 /* HeaderProfileCollectionReusableView.swift */,
+				CEF4B6ED1EFD924100709B74 /* ActivityTableViewCell.swift */,
 				CEF8B2401EA2AF0A00236D2A /* BuddiesTableViewCell.swift */,
 				CEF248141E9DC726007BEAB0 /* ProfileCollectionViewCell.swift */,
 				CED63E041EBCAFDF0087A44E /* SideMenuTableViewCell.swift */,
@@ -478,7 +490,9 @@
 				CE0FC03D1E67B0D10044C8E1 /* ActivityVC.swift in Sources */,
 				CE0FC1031E75F9880044C8E1 /* PostTableViewCell.swift in Sources */,
 				CEF8B24B1EA95BEA00236D2A /* ProfileUserVC.swift in Sources */,
+				CEF4B6F21EFDA3B400709B74 /* Notification.swift in Sources */,
 				CED63E031EBCAF650087A44E /* SideMenuTVC.swift in Sources */,
+				CEF4B6EE1EFD924100709B74 /* ActivityTableViewCell.swift in Sources */,
 				CE0FC0311E67AFC80044C8E1 /* SignInVC.swift in Sources */,
 				CE0FC0FF1E75F8BE0044C8E1 /* Post.swift in Sources */,
 				CE0FC0A51E6E007E0044C8E1 /* AuthService.swift in Sources */,
@@ -492,7 +506,9 @@
 				CE0FC0391E67B0570044C8E1 /* PostSeshhVC.swift in Sources */,
 				CEF8B2471EA7FE2B00236D2A /* SearchVC.swift in Sources */,
 				CEF8B2431EA39CFB00236D2A /* FollowApi.swift in Sources */,
+				CEF4B6F01EFDA1AE00709B74 /* NotificationApi.swift in Sources */,
 				CE0FC0B51E6E96590044C8E1 /* ProgressHUD.m in Sources */,
+				CE6DA01C1EE49DD800704532 /* HashTagVC.swift in Sources */,
 				CEF8B2531EB1903300236D2A /* PostSeshh3VC.swift in Sources */,
 				CED63E1E1EC675090087A44E /* GFGeoHashQuery.m in Sources */,
 				CEF8B24F1EB01B5200236D2A /* DetailVC.swift in Sources */,

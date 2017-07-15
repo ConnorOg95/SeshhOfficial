@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import FirebaseStorage
+import FirebaseDatabase
 
 class HelpService {
     
@@ -92,9 +93,10 @@ class HelpService {
             }
         }
         
+        let timestamp = Int(Date().timeIntervalSince1970)
         
         let currentUserId = currentUser.uid
-        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "title": title, "description": description, "startDate": startDate, "endDate": endDate, "category": category, "likeCount": 0, "ratio": ratio] as [String: Any]
+        var dict = ["uid": currentUserId, "photoUrl": photoUrl, "title": title, "description": description, "startDate": startDate, "endDate": endDate, "category": category, "likeCount": 0, "ratio": ratio, "timestamp": timestamp] as [String: Any]
         if let videoUrl = videoUrl {
             dict["videoUrl"] = videoUrl
         }
@@ -110,6 +112,17 @@ class HelpService {
             }
             
             Api.feed.REF_FEED.child(Api.user.CURRENT_USER!.uid).child(newPostId).setValue(true)
+            Api.Follow.REF_FOLLOWERS.child(Api.user.CURRENT_USER!.uid).observeSingleEvent(of: .value, with: {
+                snapshot in
+                let arraySnapshot = snapshot.children.allObjects as! [FIRDataSnapshot]
+                arraySnapshot.forEach({ (child) in
+                    Api.feed.REF_FEED.child(child.key).updateChildValues(["\(newPostId)": true])
+                    let newNotificationId = Api.notification.REF_NOTIFICATION.child(child.key).childByAutoId().key
+                    let newNotificationReference = Api.notification.REF_NOTIFICATION.child(child.key).child(newNotificationId)
+                    newNotificationReference.setValue(["from": Api.user.CURRENT_USER!.uid, "type": "feed", "objectId": newPostId, "timestamp": timestamp])
+                })
+            })
+
             let myPostRef = Api.myPosts.REF_MYPOSTS.child(currentUserId).child(newPostId)
             myPostRef.setValue(true, withCompletionBlock: { (error, ref) in
                 if error != nil {

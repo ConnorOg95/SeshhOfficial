@@ -95,8 +95,8 @@ class PostSeshh3VC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
         
         if annotation.isKind(of: MKUserLocation.self) {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "User")
-            annotationView?.image = UIImage(named: "placeholderImg")
-            annotationView?.contentMode = UIViewContentMode.scaleAspectFit
+            annotationView?.image = UIImage(named: "connor")
+            annotationView?.contentMode = UIViewContentMode.scaleAspectFill
             annotationView?.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
             annotationView?.layer.cornerRadius = 20
             annotationView?.clipsToBounds = true

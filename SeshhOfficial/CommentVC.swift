@@ -131,13 +131,56 @@ class CommentVC: UIViewController {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
+            
+            let words = self.commentTxtFld.text!.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+            
+            for var word in words {
+                if word.hasPrefix("#") {
+                    word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+                    let newHashTagRef = Api.hashTag.REF_HASHTAG.child(word.lowercased())
+                    newHashTagRef.updateChildValues([self.postId!: true])
+                }
+            }
+            
             let postCommentRef = Api.post_Comment.REF_POST_COMMENTS.child(self.postId).child(newCommentId)
             postCommentRef.setValue(true, withCompletionBlock: { (error, ref) in
                 if error != nil {
                     ProgressHUD.showError(error!.localizedDescription)
                     return
                 }
+                Api.post.observePost(withId: self.postId, completion: { (post) in
+                    if post.uid! != Api.user.CURRENT_USER!.uid {
+                        let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
+                        let newNotificationId = Api.notification.REF_NOTIFICATION.child(post.uid!).childByAutoId().key
+                        let newNotificationReference = Api.notification.REF_NOTIFICATION.child(post.uid!).child(newNotificationId)
+                        newNotificationReference.setValue(["from": Api.user.CURRENT_USER!.uid, "objectId": self.postId!, "type": "comment", "timestamp": timestamp])
+                    }
+                    
+                })
+                
+                
             })
+            
+            
+            
+            
+//            let words = self.commentTxtFld.text!.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+            
+//            for var word in words {
+//                if word.hasPrefix("#") {
+//                    word = word.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+//                    let newHashTagRef = Api.hashTag.REF_HASHTAG.child(word.lowercased())
+//                    newHashTagRef.updateChildValues([self.postId: true])
+//                }
+//            }
+            
+//            let postCommentRef = Api.post_Comment.REF_POST_COMMENTS.child(self.postId).child(newCommentId)
+//            postCommentRef.setValue(true, withCompletionBlock: { (error, ref) in
+//                if error != nil {
+//                    ProgressHUD.showError(error!.localizedDescription)
+//                    return
+//                }
+//            })
             self.empty()
             self.view.endEditing(true)
         })
@@ -157,6 +200,11 @@ class CommentVC: UIViewController {
             let profileVC = segue.destination as! ProfileUserVC
             let userId = sender as! String
             profileVC.userId = userId
+        }
+        if segue.identifier == "CommentToHashTagSegue" {
+            let hashTagVC = segue.destination as! HashTagVC
+            let tag = sender as! String
+            hashTagVC.tag = tag
         }
     }
 }
@@ -182,6 +230,9 @@ extension CommentVC: UITableViewDataSource {
 extension CommentVC: CommentTableViewCellDelegate {
     func goToProfileUserVC(userId: String) {
         performSegue(withIdentifier: "CommentToProfileSegue", sender: userId)
+    }
+    func goToHashTag(tag: String) {
+        performSegue(withIdentifier: "CommentToHashTagSegue", sender: tag)
     }
 }
 
